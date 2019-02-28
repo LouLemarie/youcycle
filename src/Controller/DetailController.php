@@ -10,7 +10,7 @@ class DetailController extends AbstractController
     /**
      * @Route("/home/details", name="details")
      */
-    public function index()
+    public function detailroute()
     {
         return $this->render('details.html.twig', [
             'controller_name' => 'Details',
