@@ -13,9 +13,16 @@
             crossorigin=""></script>
     <script type="text/javascript">
         // On initialise la latitude et la longitude de Rouen (centre de la carte)
-        var lat = 49.4401;
-        var lon = 1.0634;
+        var lat = 49.4412;
+        var lon = 1.0911;
         var macarte = null;
+        var villes = {
+            "Rouen": { "lat": 49.4412, "lon": 1.0911 },
+            "Mont St Aignan": { "lat": 49.4673, "lon": 1.0806 },
+            "Bois Guillaume": { "lat": 49.4728, "lon": 1.1194 },
+            "Le Petit Quevilly": { "lat": 49.4239, "lon": 1.0573 },
+            "Sotteville lès Rouen": { "lat": 49.4173, "lon": 1.0894 }
+        };
         // Fonction d'initialisation de la carte
         function initMap() {
             // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
@@ -27,6 +34,9 @@
                 minZoom: 1,
                 maxZoom: 20
             }).addTo(macarte);
+            for (ville in villes) {
+                var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
+            }
         }
         window.onload = function(){
             // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
