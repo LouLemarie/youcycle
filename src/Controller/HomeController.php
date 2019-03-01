@@ -16,4 +16,14 @@ class HomeController extends AbstractController
             'controller_name' => 'Accueil',
         ]);
     }
+
+    /**
+     * @Route("/home/map", name="map")
+     */
+    public function maproute()
+    {
+        return $this->render('map.html.twig', [
+            'controller_name' => 'Map',
+        ]);
+    }
 }

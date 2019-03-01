@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DetailController extends AbstractController
 {
     /**
-     * @Route("/home/details", name="details")
+     * @Route("/home/map/details", name="details")
      */
     public function detailroute()
     {
