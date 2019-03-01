@@ -3,6 +3,7 @@
 {% block title %}Map!{% endblock %}
 
 {% block body %}
+    {#<img src="{{ asset('build/glassLogo.png') }}">#}
     <style>
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
         .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
@@ -13,6 +14,7 @@
             crossorigin=""></script>
     <script type="text/javascript">
         // On initialise la latitude et la longitude de Rouen (centre de la carte)
+        var iconBase = './../build/glassLogo.png';
         var lat = 49.4412;
         var lon = 1.0911;
         var macarte = null;
@@ -21,7 +23,7 @@
             "Mont St Aignan": { "lat": 49.4673, "lon": 1.0806 },
             "Bois Guillaume": { "lat": 49.4728, "lon": 1.1194 },
             "Le Petit Quevilly": { "lat": 49.4239, "lon": 1.0573 },
-            "Sotteville lès Rouen": { "lat": 49.4173, "lon": 1.0894 }
+            "Sotteville les Rouen": { "lat": 49.4173, "lon": 1.0894 }
         };
         // Fonction d'initialisation de la carte
         function initMap() {
@@ -35,7 +37,15 @@
                 maxZoom: 20
             }).addTo(macarte);
             for (ville in villes) {
-                var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
+                var myIcon = L.icon({
+                    iconUrl: iconBase,
+                    iconSize: [25, 25],
+                    iconAnchor: [25, 50],
+                    popupAnchor: [-3, -76],
+                });
+                console.log(myIcon);
+                var marker = L.marker([villes[ville].lat, villes[ville].lon], { icon: myIcon }).addTo(macarte);
+                marker.bindPopup(ville);
             }
         }
         window.onload = function(){
