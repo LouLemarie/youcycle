@@ -41,6 +41,11 @@ class Admin
      */
     private $role;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\City", cascade={"persist", "remove"})
+     */
+    private $city;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +107,18 @@ class Admin
     public function setRole(int $role): self
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    public function getCity(): ?City
+    {
+        return $this->city;
+    }
+
+    public function setCity(?City $city): self
+    {
+        $this->city = $city;
 
         return $this;
     }

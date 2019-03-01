@@ -26,6 +26,12 @@ class Collection
      */
     private $end_co;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\city", inversedBy="collection")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $city;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +57,18 @@ class Collection
     public function setEndCo(\DateTimeInterface $end_co): self
     {
         $this->end_co = $end_co;
+
+        return $this;
+    }
+
+    public function getCity(): ?city
+    {
+        return $this->city;
+    }
+
+    public function setCity(?city $city): self
+    {
+        $this->city = $city;
 
         return $this;
     }

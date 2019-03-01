@@ -31,11 +31,18 @@ class City
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Bin", mappedBy="city")
      */
-    private $bins;
+    private $bin;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Collection", mappedBy="city")
+     */
+    private $collection;
+
 
     public function __construct()
     {
-        $this->bins = new ArrayCollection();
+        $this->bin = new ArrayCollection();
+        $this->collection = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -70,15 +77,15 @@ class City
     /**
      * @return Collection|Bin[]
      */
-    public function getBins(): Collection
+    public function getBin(): Collection
     {
-        return $this->bins;
+        return $this->bin;
     }
 
     public function addBin(Bin $bin): self
     {
-        if (!$this->bins->contains($bin)) {
-            $this->bins[] = $bin;
+        if (!$this->bin->contains($bin)) {
+            $this->bin[] = $bin;
             $bin->setCity($this);
         }
 
@@ -87,8 +94,8 @@ class City
 
     public function removeBin(Bin $bin): self
     {
-        if ($this->bins->contains($bin)) {
-            $this->bins->removeElement($bin);
+        if ($this->bin->contains($bin)) {
+            $this->bin->removeElement($bin);
             // set the owning side to null (unless already changed)
             if ($bin->getCity() === $this) {
                 $bin->setCity(null);
@@ -97,4 +104,36 @@ class City
 
         return $this;
     }
+
+    /**
+     * @return Collection|Collection[]
+     */
+    public function getCollection(): Collection
+    {
+        return $this->collection;
+    }
+
+    public function addCollection(Collection $collection): self
+    {
+        if (!$this->collection->contains($collection)) {
+            $this->collection[] = $collection;
+            $collection->setCity($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCollection(Collection $collection): self
+    {
+        if ($this->collection->contains($collection)) {
+            $this->collection->removeElement($collection);
+            // set the owning side to null (unless already changed)
+            if ($collection->getCity() === $this) {
+                $collection->setCity(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
