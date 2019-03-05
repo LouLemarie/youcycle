@@ -59,6 +59,10 @@ Encore
     //.addEntry('admin', './assets/js/admin.js')
     .copyFiles({
         from: './assets/img',
+        to: 'img/[path][name].[ext]'
+    },{
+        from: './assets/fonts',
+        to: 'fonts/[path][name].[ext]'
     })
 ;
 
