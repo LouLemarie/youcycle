@@ -3,10 +3,8 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Asset\Package;
-use Symfony\Component\Asset\UrlPackage;
-use Symfony\Component\Asset\VersionStrategy\EmptyVersionStrategy;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Config\FileLocator;
 
 class HomeController extends AbstractController
 {
@@ -25,8 +23,17 @@ class HomeController extends AbstractController
      */
     public function maproute()
     {
+        $directory = $this->getParameter('kernel.root_dir') . '/Repository/json';
+        $fileLocator = new FileLocator($directory);
+        $jsonFiles = $fileLocator->locate('bennes.geojson', null, false);
+
+        dump($jsonFiles);
+
+
+
         return $this->render('map.html.twig', [
             'controller_name' => 'Map',
+            'link' => $jsonFiles[0],
         ]);
     }
 }
