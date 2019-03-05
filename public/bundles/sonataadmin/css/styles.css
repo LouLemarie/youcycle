@@ -140,6 +140,7 @@ body > .header .logo {
 
 .navbar-static-top {
     margin-bottom: 0;
+    background: #249988;
 }
 
 .navbar-top-links > p,
@@ -247,6 +248,10 @@ body.fixed .content-header .navbar {
 
 .nav-second-level li a {
     padding-left: 37px;
+}
+
+ .navbar-static-top{
+    background: #249988;
 }
 
 .nav-third-level li a {
@@ -645,6 +650,9 @@ body {
     right: 0;
     left: 0;
 }
+.main-header .navbar-brand {
+    background: #249988!important;
+}
 .fixed .content-wrapper,
 .fixed .right-side {
     padding-top: 50px;
@@ -680,7 +688,7 @@ body.hold-transition .main-header .logo {
     padding-right: 15px;
 }
 /* H1 - H6 font */
-h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+.h6 {
     font-family: 'Source Sans Pro', sans-serif;
 }
 /* General Links */
@@ -733,7 +741,7 @@ a:focus {
 .main-header #navbar-search-input.form-control:focus,
 .main-header #navbar-search-input.form-control:active {
     border-color: rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.9);
+    background: #298988;
 }
 .main-header #navbar-search-input.form-control::-moz-placeholder {
     color: #ccc;
@@ -779,7 +787,7 @@ a:focus {
     content: "\f0c9";
 }
 .main-header .sidebar-toggle:hover {
-    color: #fff;
+    color:  #249988;
 }
 .main-header .sidebar-toggle:focus,
 .main-header .sidebar-toggle:active {
@@ -824,9 +832,7 @@ a:focus {
 .main-header .logo .logo-mini {
     display: none;
 }
-.main-header .navbar-brand {
-    color: #fff;
-}
+
 .content-header {
     position: relative;
     padding: 15px 15px 0 15px;
@@ -1381,8 +1387,11 @@ a:focus {
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:hover,
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:focus,
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:active {
-    background: #222d32;
+    background:  #249988;
     color: #fff;
+}
+.sidebar{
+    background-color:  #249988;
 }
 .control-sidebar-dark .control-sidebar-heading,
 .control-sidebar-dark .control-sidebar-subheading {
@@ -1464,6 +1473,7 @@ a:focus {
 .dropdown-menu > .divider {
     background-color: #eee;
 }
+
 .navbar-nav > .notifications-menu > .dropdown-menu,
 .navbar-nav > .messages-menu > .dropdown-menu,
 .navbar-nav > .tasks-menu > .dropdown-menu {
