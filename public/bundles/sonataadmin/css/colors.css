@@ -1,0 +1,40 @@
+table.sonata-ba-list th {
+    background: #282D31!important;
+}
+
+table.sonata-ba-list tfoot td {
+    background: #282D31!important;
+
+    border-top: 1px solid #DDD;
+}
+
+a.sonata-ba-collapsed {
+    color: #404040;
+}
+
+/* Form */
+textarea.title {
+    font-size: 1em;
+    width: 500px;
+}
+
+input.title {
+    font-size: 1em;
+    width: 500px;
+}
+
+div.sonata-ba-field-error input{
+    border: 1px solid #f79992;
+}
+
+div.sonata-ba-field-error textarea{
+    border: 1px solid #f79992;
+}
+
+div.sonata-ba-field-error select{
+    border: 1px solid #f79992;
+}
+
+div.sonata-ba-field-error .field-short-description {
+    border: 1px solid #B94A48;
+}
