@@ -4,6 +4,10 @@
 
 {% block body %}
     {#{% block navbar %}{% endblock %}#}
+    <form method="get">
+        Recherche : <input id="ville" placeholder="votre ville ..." maxlength="50" type="text"/>
+        <button>rechercher</button>
+    </form>
     <div class="example-wrapper">
         <div id="map">
             <!-- Ici s'affichera la carte -->

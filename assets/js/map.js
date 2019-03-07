@@ -4,6 +4,21 @@ function initMap() {
         startPos = position;
         userlat = startPos.coords.latitude;
         userlon = startPos.coords.longitude;
+        var ville = $("#ville").val();
+        if(ville != ""){
+            $.ajax({
+                url: "https://nominatim.openstreetmap.org/search", // URL de Nominatim
+                type: 'get', // Requête de type GET
+                data: "q="+ville+"&format=json&addressdetails=1&limit=1&polygon_svg=1" // Données envoyées (q -> adresse complète, format -> format attendu pour la réponse, limit -> nombre de réponses attendu, polygon_svg -> fournit les données de polygone de la réponse en svg)
+            }).done(function (response) {
+                if(response != ""){
+                    userlat = response[0]['lat'];
+                    userlon = response[0]['lon'];
+                }
+            }).fail(function (error) {
+                alert(error);
+            });
+        }
         console.log("lat: " + userlat + " - lon: " + userlon);
         var map = L.map('map').setView([userlat,userlon], 12);
         var osmLayer = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
@@ -24,16 +39,16 @@ function initMap() {
         //         }
         //     }).addTo(map);
         // });
-        var baseLayers = {
-            'OpenStreetMap': osmLayer,
-        };
-        L.control.layers(baseLayers).addTo(map);
+
     };
     var geoFail = function () { // Ceci s'exécutera si l'utilisateur refuse la géolocalisation
         console.log("refus");
     };
     // La ligne ci-dessous cherche la position de l'utilisateur et déclenchera la demande d'accord
     navigator.geolocation.getCurrentPosition(geoSuccess, geoFail);
+
+
+
 
 }
 
