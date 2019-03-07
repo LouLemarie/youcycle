@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/home", name="home")
+     * @Route("/", name="home")
      */
     public function homeroute()
     {
@@ -21,7 +21,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/home/map", name="map")
+     * @Route("/map", name="map")
      */
     public function maproute()
     {
