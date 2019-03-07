@@ -58,7 +58,7 @@ Encore
     //.enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
     .copyFiles({
-        from: './assets/img',
+        from: './assets/images',
     })
 ;
 
