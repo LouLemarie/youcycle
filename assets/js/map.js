@@ -14,7 +14,7 @@ var villes = {
 // Fonction d'initialisation de la carte
 function initMap() {
     var markers = [];
-    macarte = L.map('map').setView([lat, lon], 11);
+    macarte = L.map('map').setView([lat,lon], 11);
     markerCusters = L.markerClusterGroup();
     L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
         attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
@@ -36,7 +36,23 @@ function initMap() {
     var group = new L.featureGroup(markers);
     macarte.fitBounds(group.getBounds().pad(0.5));
     macarte.addLayer(markerCusters);
+
+    var geoSuccess = function (position) { // Ceci s'exécutera si l'utilisateur accepte la géolocalisation
+        startPos = position;
+        userlat = startPos.coords.latitude;
+        userlon = startPos.coords.longitude;
+        console.log("lat: " + userlat + " - lon: " + userlon);
+    };
+    var geoFail = function () { // Ceci s'exécutera si l'utilisateur refuse la géolocalisation
+        console.log("refus");
+    };
+    // La ligne ci-dessous cherche la position de l'utilisateur et déclenchera la demande d'accord
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoFail);
+
 }
+
+
 window.onload = function(){
     initMap();
 };
+
