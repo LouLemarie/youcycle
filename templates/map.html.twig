@@ -29,7 +29,6 @@
             crossorigin=""></script>
     <script type='text/javascript'
             src='https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js'></script>
-    <script src=″https://code.jquery.com/jquery-3.1.1.min.js″></script>
     <script>
 
         function initMap() {
@@ -42,30 +41,59 @@
 
             map.addLayer(osmLayer);
 
-            var bennes = $.getJSON('{{ link }}', function (dataBennes) {
-                var iconBennes = L.icon({
+            var bennes= $.getJSON(parseJSON('{{ link }}'),function(dataBennes) {
+                var iconeBennes = L.icon({
                     iconUrl: './../build/glassLogo.png',
                     iconSize: [25, 25]
                 });
-                L.geoJSON(dataBennes, {
-                    pointToLayer: function (feature, latlng) {
-                        var marker = L.marker(latlng, {icon: iconBennes});
-                        marker.bindPopup('<b><u>Description de la benne</u></b><br>'
-                            + '<b>Adresse : </b>' + features.properties.numerodansvoie + features.properties.voie + '<br>'
-                            + '<b>Commune : </b>' + features.properties.commune + '<br>'
-                        );
+                L.geoJson(dataBennes, {
+                    pointToLayer: function (features, latlng) {
+                        var marker = L.marker(latlng, {icon: iconeBennes});
                         return marker;
                     }
                 }).addTo(map);
             });
+
             var baseLayers = {
                 'OpenStreetMap': osmLayer,
                 };
             l.control.layers(baseLayers).addTo(map);
-        }
+            }
 
         window.onload = function(){
             initMap();
         }
+
+
+        {#var iconBase = './../build/glassLogo.png';#}
+        {#var lat = 45.7563851;#}
+        {#var lon = 4.8248167;#}
+        {#var macarte = null;#}
+        {#var markerCusters;#}
+
+        {#// Fonction d'initialisation de la carte#}
+        {#function initMap() {#}
+            {#var markers = [];#}
+            {#macarte = L.map('map').setView([lat, lon], 11);#}
+            {#markerCusters = L.markerClusterGroup();#}
+            {#L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {#}
+                {#attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',#}
+                {#minZoom: 1,#}
+                {#maxZoom: 20#}
+            {#}).addTo(macarte);#}
+            {#geojson = L.geoJson({{ link }}, {#}
+                {#style: function(feature) {#}
+                    {#return feature.properties && feature.properties.style;#}
+                {#},#}
+                {#pointToLayer: function (feature, latlng) {#}
+                    {#var marker = L.marker(latlng);#}
+                    {#marker.bindPopup('<b><u>Description de la benne</u></b><br>');#}
+                    {#return marker;#}
+                {#}#}
+            {#}).addTo(map);#}
+        {#}#}
+        {#window.onload = function(){#}
+            {#initMap();#}
+        {#};#}
     </script>
 {% endblock %}

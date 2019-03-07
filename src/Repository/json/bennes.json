@@ -1,7 +1,6 @@
 {
 "type": "FeatureCollection",
 "name": "ms:gic_collecte.gicsiloverre",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "gml_id": "gic_collecte.gicsiloverre.1", "commune": "LYON 7 ÈME", "code_postal": "69007", "voie": "Rue Chevreul", "numerodansvoie": "24", "gestionnaire": "Col Sud", "identifiant": "7675", "code_insee": "69387", "gid": "1" }, "geometry": { "type": "Point", "coordinates": [ 4.838781, 45.749000999057124 ] } },
 { "type": "Feature", "properties": { "gml_id": "gic_collecte.gicsiloverre.2", "commune": "LYON 8 ÈME", "code_postal": "69008", "voie": "Rue Professeur Kleinclausz", "numerodansvoie": "14", "gestionnaire": "Col Sud", "observation": "Numéro 23", "identifiant": "7066", "code_insee": "69388", "gid": "2" }, "geometry": { "type": "Point", "coordinates": [ 4.859953, 45.737381999057114 ] } },
