@@ -2,30 +2,69 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <!--- basic page needs
+    ================================================== -->
+        <meta charset="utf-8">
+        <title>Glint</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- mobile specific metas
+        ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- CSS
+        ================================================== -->
+        {#<link rel="stylesheet" href="{{ asset('build/css/base.css') }}">#}
+        {#<link rel="stylesheet" href="{{ asset('build/css/vendor.css') }}">#}
+        {#<link rel="stylesheet" href="{{ asset('build/css/main.css') }}">#}
+
         {% block stylesheets %}
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Pinyon+Script" rel="stylesheet">
-            <link rel="stylesheet" href="{{ asset('build/assets/css/styles-merged.css') }}">
-            <link rel="stylesheet" href="{{ asset('build/assets/css/style.css') }}">
-
-            <!--[if lt IE 9]>
-            <script src="{{ asset('build/assets/js/vendor/html5shiv.min.js') }}"></script>
-            <script src="{{ asset('build/assets/js/vendor/respond.min.js') }}"></script>
-            <![endif]-->
+            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
+
+        <!-- script
+        ================================================== -->
+        {#<script src="{{ asset('build/js/modernizr.js') }}"></script>#}
+        {#<script src="{{ asset('build/js/pace.min.js') }}"></script>#}
+
+        <!-- favicons
+        ================================================== -->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
     </head>
-    <body>
 
-    {% block body %}{% endblock %}
+    <body id="top">
 
-    {% block javascripts %}
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="{{ asset('build/assets/js/scripts.min.js') }}"></script>
-        <script src="{{ asset('build/assets/js/custom.min.js') }}"></script>
-    {% endblock %}
+        {% block body %}{% endblock %}
+
+        <!-- preloader ================================================== -->
+        {#<div id="preloader">#}
+            {#<div id="loader">#}
+                {#<div class="line-scale-pulse-out">#}
+                    {#<div></div>#}
+                    {#<div></div>#}
+                    {#<div></div>#}
+                    {#<div></div>#}
+                    {#<div></div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+        <!-- Java Script
+                    ================================================== -->
+        {#<script src="{{ asset('build/js/plugins.js') }}"></script>#}
+        {#<script src="{{ asset('build/js/main.js') }}"></script>#}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+
+            <!-- Renders app.js & a webpack runtime.js file
+                <script src="/build/runtime.js"></script>
+                <script src="/build/app.js"></script> -->
+        {% endblock %}
 
     </body>
 </html>
