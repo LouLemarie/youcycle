@@ -5,8 +5,11 @@
 /public/bundles/
 /var/
 /vendor/
-package.json
+/public/
+composer.lock
 package-lock.json
+package.json
+yarn.lock
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
