@@ -9,7 +9,7 @@ class NewsletterController extends AbstractController
 {
 
     /**
-     * @Route("/home/newsletter", name="newsletter")
+     * @Route("/newsletter", name="newsletter")
      */
     public function newsletterroute()
     {
