@@ -51,19 +51,26 @@
 </style>
 
 <div class="example-wrapper">
-    <form class="register-form">
-        <img src="{{ asset('./../build/img/logo.png') }}" alt="Logo">
-        <h3>inscription</h3>
-        <input type="text" placeholder="name"/>
-        <input type="password" placeholder="password"/>
-        <input type="text" placeholder="email address"/>
-        <input type="text" placeholder="ville"/>
-        <select>
-            <option value="Administrateur">Administrateur</option>
-            <option value="Super-Administrateur">Super-Administrateur</option>
-        </select>
-        <button>create</button>
+    {#<form class="register-form">#}
+        {#<img src="{{ asset('./../build/img/logo.png') }}" alt="Logo">#}
+        {#<h3>inscription</h3>#}
+        {#<input type="text" placeholder="name"/>#}
+        {#<input type="password" placeholder="password"/>#}
+        {#<input type="text" placeholder="email address"/>#}
+        {#<input type="text" placeholder="ville"/>#}
+        {#<button>create</button>#}
 
-    </form>
+    {#</form>#}
+
+        {{ form_start(form) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.pwd.first) }}
+        {{ form_row(form.pwd.second) }}
+        {#{{ form_row(form.city) }}#}
+
+        <button type="submit">Inscription!</button>
+        {{ form_end(form) }}
 </div>
 {% endblock %}
