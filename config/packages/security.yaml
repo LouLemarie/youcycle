@@ -4,12 +4,31 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory: { memory: ~ }
+        admin_provider:
+            entity:
+                class: App\Entity\Admin
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+            anonymous: ~
+            form_login:
+                login_path: adminlogin
+                check_path: adminlogin
+                always_use_default_target_path: true
+
+            http_basic: ~
+            provider: admin_provider
+
+            logout:
+                path: /logout
+                target: /home
+
+    role_hierarchy:
+        ROLE_ADMIN: 1
+        ROLE_SUPER_ADMIN: 2
 
             # activate different ways to authenticate
 
