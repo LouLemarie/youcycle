@@ -51,8 +51,10 @@ Encore
     //.autoProvidejQuery()
     .autoProvideVariables({
         $:'jquery',
-    jQuery:'jquery',
-    'windows.jQuery': 'jquery'})
+        jQuery:'jquery', 'windows.jQuery': 'jquery'
+    })
+
+
 
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
