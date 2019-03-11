@@ -1,7 +1,4 @@
-/**
- * SonataAdminBundle Theme based on SB Admin v2.0
- * http://startbootstrap.com/templates/sb-admin-v2/
-*/
+
 
 html {
     position: relative;
@@ -250,7 +247,7 @@ body.fixed .content-header .navbar {
     padding-left: 37px;
 }
 
- .navbar-static-top{
+.navbar-static-top{
     background: #249988;
 }
 
