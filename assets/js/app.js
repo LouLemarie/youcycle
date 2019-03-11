@@ -1,4 +1,3 @@
-
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -10,18 +9,10 @@
 
 global.$ = global.jQuery = $;
 
-// JS
-require('../css/app.css');
 
-require('waypoints');
-require('jquery-validation');
-require('bootstrap');
-require('./main.js');
-require('./modernizr.js');
-require('./pace.min.js');
-require('./plugins.js');
-
-
+// CSS
+require('../css/base.css');
+require('../css/main.css');
 
 // Fonts
 require('../css/font-awesome/css/font-awesome.css');
@@ -39,11 +30,13 @@ require('../css/micons/fonts/icomoon.ttf');
 require('../css/micons/fonts/icomoon.woff');
 require('../css/micons/micons.css');
 
-// CSS
-require('../css/base.css');
-require('../css/fonts.css');
-require('../css/main.css');
-require('../css/vendor.css');
+// Javascript
+require('./modernizr.js');
+require('./pace.min.js');
+require('./jquery-3.2.1.min.js');
+require('./plugins.js');
+require('./main.js');
+require('./searchbar.js');
 
 
 
@@ -54,4 +47,4 @@ require('../css/vendor.css');
  require('leaflet');
  require('leaflet.markercluster');
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+console.log('Ça marche niquel Michel!');
