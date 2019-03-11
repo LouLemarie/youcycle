@@ -3,491 +3,356 @@
 {% block title %}Accueil!{% endblock %}
 
 {% block body %}
-    <!-- Fixed navbar -->
 
-    <nav class="navbar navbar-default navbar-fixed-top probootstrap-navbar">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html" title="uiCookies:FineOak">FineOak</a>
-            </div>
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
 
-            <div id="navbar-collapse" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#" data-nav-section="welcome">Welcome</a></li>
-                    <li><a href="#" data-nav-section="specialties">Specialties</a></li>
-                    <li><a href="#" data-nav-section="menu">Menu</a></li>
-                    <li><a href="#" data-nav-section="reservation">Reservation</a></li>
-                    <li><a href="#" data-nav-section="events">Events</a></li>
-                    <li><a href="#" data-nav-section="contact">Contact</a></li>
-                </ul>
-            </div>
+        <div class="header-logo">
+            <a class="site-logo" href="#">
+                <img src="{{ asset('build/logo.png') }}" alt="Homepage">
+            </a>
         </div>
-    </nav>
 
-    <section class="flexslider" data-section="welcome">
-        <ul class="slides">
-            <li style="background-image: url({{ asset('build/assets/img/hero_bg_1.jpg') }})" class="overlay" data-stellar-background-ratio="0.5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="probootstrap-slider-text text-center probootstrap-animate probootstrap-heading"></div>
-                        </div>
+        <nav class="header-nav">
+
+            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+            <div class="header-nav__content">
+                <h3>Navigation</h3>
+
+                {# Smooth scrolling #}
+                <ul class="header-nav__list">
+                    <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                    <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+                    <li><a class="smoothscroll"  href="#services" title="services">Services</a></li>
+                    <li><a class="smoothscroll"  href="#clients" title="clients">Clients</a></li>
+                    <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+                </ul>
+
+                <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
+
+                <ul class="header-nav__social">
+                    <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                </ul>
+
+            </div> <!-- end header-nav__content -->
+
+        </nav>  <!-- end header-nav -->
+
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-text">Menu</span>
+            <span class="header-menu-icon"></span>
+        </a>
+
+    </header> <!-- end s-header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="{{ asset('build/hero-bg.jpg') }}" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="row home-content__main">
+
+                <div class="home-content__searchbar">
+                    <div class="search">
+                        <input type="checkbox" id="trigger" class="search__checkbox" />
+                        <label class="search__label-init" for="trigger"></label>
+                        <label class="search__label-active" for="trigger"></label>
+                        <div class="search__border"></div>
+                        <input type="text" class="search__input" />
+                        <div class="search__close"></div>
                     </div>
                 </div>
-            </li>
-            <li style="background-image: url({{ asset('build/hero_bg_2.jpg') }})" class="overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="probootstrap-slider-text text-center probootstrap-animate probootstrap-heading"></div>
-                        </div>
-                    </div>
+                <div class="home-content__buttons">
+                    <a href="#contact" class="smoothscroll btn btn--stroke">
+                        A Propos
+                    </a>
+                    <a href="#about" class="smoothscroll btn btn--stroke">
+                        Recherche
+                    </a>
                 </div>
 
+            </div>
+
+            <div class="home-content__scroll">
+                <a href="#about" class="scroll-link smoothscroll">
+                    <span>Scroll Down</span>
+                </a>
+            </div>
+
+            <div class="home-content__line"></div>
+
+        </div> <!-- end home-content -->
+
+
+        <ul class="home-social">
+            <li>
+                <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
             </li>
-            <li style="background-image: url({{ asset('build/hero_bg_3.jpg') }})" class="overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="probootstrap-slider-text text-center probootstrap-animate probootstrap-heading"></div>
-                        </div>
-                    </div>
-                </div>
+            <li>
+                <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a>
             </li>
         </ul>
-    </section>
+        <!-- end home-social -->
 
-    <section class="probootstrap-section probootstrap-bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 text-center probootstrap-animate">
-                    <div class="probootstrap-heading dark">
-                        <h1 class="primary-heading">Discover</h1>
-                        <h3 class="secondary-heading">Our Store</h3>
-                        <span class="seperator">* * *</span>
-                    </div>
-                    <p>Voluptatibus quaerat laboriosam fugit non Ut consequatur animi est molestiae enim a voluptate totam natus modi debitis dicta impedit voluptatum quod sapiente illo saepe explicabo quisquam perferendis labore et illum suscipit</p>
-                    <p><a href="#" class="probootstrap-custom-link">About Us</a></p>
-                </div>
-                <div class="col-md-6 col-md-push-1 probootstrap-animate">
-                    <p><img src="{{ asset('build//img_1.jpg') }}" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></p>
-                </div>
+    </section> <!-- end s-home -->
+
+
+    <!-- about
+    ================================================== -->
+    <section id='features' class="s-features">
+        <div class="features-list">
+            <div class="features-item features-map">
+                <img src="{{ asset('build/icons/002-map.png') }}">
+                <h3 class="features-item-title">An integrated map</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Adipisci aperiam debitis nulla officiis quasi reprehenderit tenetur!
+                    Atque commodi consequuntur ducimus facere fugiat quaerat veritatis.
+                    Maxime?
+                </p>
             </div>
-            <!-- END row -->
-        </div>
-    </section>
-
-    <section class="probootstrap-section-bg overlay" style="background-image: url({{ asset('build/hero_bg_2.jpg') }});" data-stellar-background-ratio="0.5" data-section="specialties">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center probootstrap-animate">
-                    <div class="probootstrap-heading">
-                        <h2 class="primary-heading">Discover</h2>
-                        <h3 class="secondary-heading">Our Specialties</h3>
-                    </div>
-                </div>
+            <div class="features-item features-recycling">
+                <img src="{{ asset('build/icons/004-recycle.png') }}">
+                <h3 class="features-item-title">Improving recycling process</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Eius, enim, voluptatibus? Alias asperiores autem commodi eos facere,
+                    iure nam omnis provident quae sequi suscipit voluptatibus!
+                </p>
             </div>
-        </div>
-    </section>
-    <!-- probootstrap-bg-white -->
-    <section class="probootstrap-section">
-        <div class="container">
-            <div class="row">
-                <div class="probootstrap-cell-retro">
-                    <div class="half">
-
-                        <div class="probootstrap-cell probootstrap-animate" data-animate-effect="fadeIn">
-                            <div class="image" style="background-image: url({{ asset('build/img_square_1.jpg') }});"></div>
-                            <div class="text text-center">
-                                <h3>Baked Potato Pizza</h3>
-                                <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam.</p>
-                                <p class="price">$20.99</p>
-                            </div>
-                        </div>
-                        <div class="probootstrap-cell reverse probootstrap-animate" data-animate-effect="fadeIn">
-                            <div class="image" style="background-image: url({{ asset('build/img_square_2.jpg') }});"></div>
-                            <div class="text text-center">
-                                <h3>Salted Fried Chicken</h3>
-                                <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam.</p>
-                                <p class="price">$19.99</p>
-                            </div>
-                        </div>
-                        <div class="probootstrap-cell probootstrap-animate" data-animate-effect="fadeIn">
-                            <div class="image" style="background-image: url({{ asset('build/img_square_3.jpg') }});"></div>
-                            <div class="text text-center">
-                                <h3>Imported Salmon Steak</h3>
-                                <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam.</p>
-                                <p class="price">$20.99</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="half">
-
-                        <div class="probootstrap-cell probootstrap-animate" data-animate-effect="fadeIn">
-                            <div class="image" style="background-image: url({{ asset('build/img_square_4.jpg') }});"></div>
-                            <div class="text text-center">
-                                <h3>Roast Beef (4 sticks)</h3>
-                                <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam.</p>
-                                <p class="price">$32.99</p>
-                            </div>
-                        </div>
-                        <div class="probootstrap-cell reverse probootstrap-animate" data-animate-effect="fadeIn">
-                            <div class="image" style="background-image: url({{ asset('build/img_square_5.jpg') }});"></div>
-                            <div class="text text-center">
-                                <h3>Tuna Roast Source</h3>
-                                <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam.</p>
-                                <p class="price">$25.99</p>
-                            </div>
-                        </div>
-                        <div class="probootstrap-cell probootstrap-animate" data-animate-effect="fadeIn">
-                            <div class="image" style="background-image: url({{ asset('build/img_square_1.jpg') }});"></div>
-                            <div class="text text-center">
-                                <h3>Fried Potatoes with Garlic</h3>
-                                <p>Laboriosam pariatur modi praesentium deleniti molestiae officiis atque numquam.</p>
-                                <p class="price">$32.99</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+            <div class="features-item features-geolocalisation">
+                <img src="{{ asset('build/icons/001-pin.png') }}">
+                <h3 class="features-item-title">Geolocalisation</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Deserunt distinctio ea, eveniet explicabo id impedit ipsum iste
+                    nobis optio perferendis possimus sint sunt tenetur voluptate!
+                </p>
+            </div>
+            <div class="features-item features-detailed-infos">
+                <img src="{{ asset('build/icons/005-information.png') }}">
+                <h3 class="features-item-title">Detailed infos</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    A deleniti eos eveniet id impedit, maiores nobis nulla omnis
+                    quas voluptatum! Ad autem inventore libero voluptate.
+                </p>
             </div>
         </div>
-    </section>
+    </section> <!-- end section-about -->
 
-    <section class="probootstrap-section-bg overlay" style="background-image: url({{ asset('build/hero_bg_4.jpg') }});"  data-stellar-background-ratio="0.5"  data-section="menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center probootstrap-animate">
-                    <div class="probootstrap-heading">
-                        <h2 class="primary-heading">Discover</h2>
-                        <h3 class="secondary-heading">Our Menu</h3>
-                    </div>
-                </div>
+
+    <!-- services
+    ================================================== -->
+    <section id='services' class="s-services">
+        <div class="parallax-1">
+            <h2 class="ptitle">IMAGE 1</h2>
+            <p>
+                Pharetra diam sit amet nisl suscipit. In massa tempor nec feugiat nisl pretium. Vel facilisis volutpat est velit egestas.
+                Sed odio morbi quis commodo odio aenean sed. Arcu odio ut sem nulla pharetra diam.
+                Dui faucibus in ornare quam viverra orci sagittis. Nulla aliquet porttitor lacus luctus accumsan tortor posuere.
+                Ut faucibus pulvinar elementum integer enim. Arcu non odio euismod lacinia at quis.
+                Ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus. Tortor id aliquet lectus proin nibh nisl condimentum.
+                Mauris a diam maecenas sed enim ut. Ornare lectus sit amet est placerat in egestas erat.
+                Gravida arcu ac tortor dignissim convallis aenean et tortor. Tristique senectus et netus et malesuada fames ac.
+                Urna neque viverra justo nec ultrices dui sapien. At lectus urna duis convallis convallis.
+                Adipiscing commodo elit at imperdiet dui accumsan sit. Nisi vitae suscipit tellus mauris.
+                Vestibulum lorem sed risus ultricies.
+            </p>
+        </div>
+
+        <div class="parallax-2">
+            <h2 class="ptitle">IMAGE 2</h2>
+            <p>
+                Pharetra diam sit amet nisl suscipit. In massa tempor nec feugiat nisl pretium. Vel facilisis volutpat est velit egestas.
+                Sed odio morbi quis commodo odio aenean sed. Arcu odio ut sem nulla pharetra diam.
+                Dui faucibus in ornare quam viverra orci sagittis. Nulla aliquet porttitor lacus luctus accumsan tortor posuere.
+                Ut faucibus pulvinar elementum integer enim. Arcu non odio euismod lacinia at quis.
+                Ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus. Tortor id aliquet lectus proin nibh nisl condimentum.
+                Mauris a diam maecenas sed enim ut. Ornare lectus sit amet est placerat in egestas erat.
+                Gravida arcu ac tortor dignissim convallis aenean et tortor. Tristique senectus et netus et malesuada fames ac.
+                Urna neque viverra justo nec ultrices dui sapien. At lectus urna duis convallis convallis.
+                Adipiscing commodo elit at imperdiet dui accumsan sit. Nisi vitae suscipit tellus mauris. Vestibulum lorem sed risus ultricies.
+            </p>
+        </div>
+
+    </section> <!-- end section-services -->
+
+
+    <!-- contact
+================================================== -->
+    <section id="contact" class="s-contact">
+
+        <div class="overlay"></div>
+        <div class="contact__line"></div>
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Contact Us</h3>
+                <h1 class="display-2 display-2--light">Reach out for a new project or just say hello</h1>
             </div>
         </div>
-    </section>
 
-    <section class="probootstrap-section probootstrap-bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="menus">
-                        <li>
-                            <figure class="image"><img src="{{ asset('build/img_square_1.jpg') }}" alt="Free Bootstrap Template by uicookies.com"></figure>
-                            <div class="text">
-                                <span class="price">$22.99</span>
-                                <h3>Fried Potatoes with Garlic</h3>
-                                <p>Crab / Potatoes / Rice</p>
-                            </div>
-                        </li>
-                        <li>
-                            <figure class="image"><img src="{{ asset('build/img_square_2.jpg') }}" alt="Free Bootstrap Template by uicookies.com"></figure>
-                            <div class="text">
-                                <span class="price">$22.99</span>
-                                <h3>Tuna Roast Source</h3>
-                                <p>Crab / Potatoes / Rice</p>
-                            </div>
-                        </li>
-                        <li>
-                            <figure class="image"><img src="{{ asset('build/img_square_3.jpg') }}" alt="Free Bootstrap Template by uicookies.com"></figure>
-                            <div class="text">
-                                <span class="price">$22.99</span>
-                                <h3>Roast Beef (4 sticks)</h3>
-                                <p>Crab / Potatoes / Rice</p>
-                            </div>
-                        </li>
-                        <li>
-                            <figure class="image"><img src="{{ asset('build/img_square_4.jpg') }}" alt="Free Bootstrap Template by uicookies.com"></figure>
-                            <div class="text">
-                                <span class="price">$22.99</span>
-                                <h3>Salted Fried Chicken</h3>
-                                <p>Crab / Potatoes / Rice</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="menus">
-                        <li>
-                            <figure class="image"><img src="{{ asset('build/img_square_5.jpg') }}" alt="Free Bootstrap Template by uicookies.com"></figure>
-                            <div class="text">
-                                <span class="price">$22.99</span>
-                                <h3>Baked Potato Pizza</h3>
-                                <p>Crab / Potatoes / Rice</p>
-                            </div>
-                        </li>
-                        <li>
-                            <figure class="image"><img src="{{ asset('build/img_square_1.jpg') }}" alt="Free Bootstrap Template by uicookies.com"></figure>
-                            <div class="text">
-                                <span class="price">$22.99</span>
-                                <h3>Fried Potatoes with Garlic</h3>
-                                <p>Crab / Potatoes / Rice</p>
-                            </div>
-                        </li>
-                        <li>
-                            <figure class="image"><img src="{{ asset('build/img_square_2.jpg') }}" alt="Free Bootstrap Template by uicookies.com"></figure>
-                            <div class="text">
-                                <span class="price">$22.99</span>
-                                <h3>Salted Fried Chicken</h3>
-                                <p>Crab / Potatoes / Rice</p>
-                            </div>
-                        </li>
-                        <li>
-                            <figure class="image"><img src="{{ asset('build/img_square_3.jpg') }}" alt="Free Bootstrap Template by uicookies.com"></figure>
-                            <div class="text">
-                                <span class="price">$22.99</span>
-                                <h3>Tuna Roast Source</h3>
-                                <p>Crab / Potatoes / Rice</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="row contact-content" data-aos="fade-up">
 
-    <section class="probootstrap-section-bg overlay" style="background-image: {{ asset('build/img_square_5.jpg') }};"  data-stellar-background-ratio="0.5" data-section="reservation">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center probootstrap-animate">
-                    <div class="probootstrap-heading">
-                        <h2 class="primary-heading">Booking</h2>
-                        <h3 class="secondary-heading">Reserve A Table</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="contact-primary">
 
-    <section class="probootstrap-section probootstrap-bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 probootstrap-animate">
-                    <form method="post" class="probootstrap-form">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="people">How Many People</label>
-                                    <div class="form-field">
-                                        <i class="icon icon-chevron-down"></i>
-                                        <select name="people" id="people" class="form-control">
-                                            <option value="#">1 people</option>
-                                            <option value="#">2 people</option>
-                                            <option value="#">3 people</option>
-                                            <option value="#">4+ people</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="date">Date</label>
-                                    <div class="form-field">
-                                        <i class="icon icon-calendar"></i>
-                                        <input type="text" id="date" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="time">Time</label>
-                                    <div class="form-field">
-                                        <i class="icon icon-clock"></i>
-                                        <input type="text" id="time" class="form-control">
-                                    </div>
+                <h3 class="h6">Send Us A Message</h3>
+
+                <form name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
+                    <fieldset>
+
+                        <div class="form-field">
+                            <input name="contactName" type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                        </div>
+                        <div class="form-field">
+                            <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
+                        </div>
+                        <div class="form-field">
+                            <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                        </div>
+                        <div class="form-field">
+                            <textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                        </div>
+                        <div class="form-field">
+                            <button class="full-width btn--primary">Submit</button>
+                            <div class="submit-loader">
+                                <div class="text-loader">Sending...</div>
+                                <div class="s-loader">
+                                    <div class="bounce1"></div>
+                                    <div class="bounce2"></div>
+                                    <div class="bounce3"></div>
                                 </div>
                             </div>
                         </div>
-                        <!-- END row -->
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <div class="form-field">
-                                        <i class="icon icon-user2"></i>
-                                        <input type="text" id="name" class="form-control" placeholder="Your full name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <div class="form-field">
-                                        <i class="icon icon-mail"></i>
-                                        <input type="text" id="email" class="form-control" placeholder="Your email address">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <div class="form-field">
-                                        <i class="icon icon-phone"></i>
-                                        <input type="text" id="phone" class="form-control" placeholder="Your phone">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 col-md-offset-4">
-                                <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-lg btn-primary btn-block">
-                            </div>
-                        </div>
 
+                    </fieldset>
+                </form>
+
+                <!-- contact-warning -->
+                <div class="message-warning">
+                    Something went wrong. Please try again.
+                </div>
+
+                <!-- contact-success -->
+                <div class="message-success">
+                    Your message was sent, thank you!<br>
+                </div>
+
+            </div> <!-- end contact-primary -->
+
+            <div class="contact-secondary">
+                <div class="contact-info">
+
+                    <h3 class="h6 hide-on-fullwidth">Contact Info</h3>
+
+                    <div class="cinfo">
+                        <h5>Where to Find Us</h5>
+                        <p>
+                            1600 Amphitheatre Parkway<br>
+                            Mountain View, CA<br>
+                            94043 US
+                        </p>
+                    </div>
+
+                    <div class="cinfo">
+                        <h5>Email Us At</h5>
+                        <p>
+                            contact@glintsite.com<br>
+                            info@glintsite.com
+                        </p>
+                    </div>
+
+                    <div class="cinfo">
+                        <h5>Call Us At</h5>
+                        <p>
+                            Phone: (+33) 63555 1212<br>
+                            Fax: (+33) 63555 0101
+                        </p>
+                    </div>
+
+                    <ul class="contact-social">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                        </li>
+                    </ul> <!-- end contact-social -->
+
+                </div> <!-- end contact-info -->
+            </div> <!-- end contact-secondary -->
+
+        </div> <!-- end contact-content -->
+
+    </section> <!-- end s-contact -->
+
+
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+        <div class="row footer-main">
+
+            <div class="col-six tab-full left footer-desc">
+
+                <div class="footer-logo"></div>
+                Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Quaerat voluptas autem necessitatibus vitae aut.
+
+            </div>
+
+            <div class="col-six tab-full right footer-subscribe">
+
+                <h4>Get Notified</h4>
+                <p>Quia quo qui sed odit. Quaerat voluptas autem necessitatibus vitae aut non alias sed quia. Ut itaque enim optio ut excepturi deserunt iusto porro.</p>
+
+                <div class="subscribe-form">
+                    <form id="mc-form" class="group" novalidate="true">
+                        <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
+                        <input type="submit" name="subscribe" value="Subscribe">
+                        <label for="mc-email" class="subscribe-message"></label>
                     </form>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="probootstrap-section-bg overlay" style="background-image: url({{ asset('build/img_square_1.jpg') }});"  data-stellar-background-ratio="0.5" data-section="events">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center probootstrap-animate">
-                    <div class="probootstrap-heading">
-                        <h2 class="primary-heading">Upcoming</h2>
-                        <h3 class="secondary-heading">Our Events</h3>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
-    <section class="probootstrap-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-4 probootstrap-animate">
-                    <div class="probootstrap-block-image">
-                        <figure><img src="{{ asset('build/img_square_2.jpg') }}" alt="Free Bootstrap Template by uicookies.com"></figure>
-                        <div class="text">
-                            <span class="date">June 29, 2017</span>
-                            <h3><a href="#">Laboriosam Quod Dignissimos</a></h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
-                            <p class=""><a href="#" class="probootstrap-custom-link link-sm">Read More</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 probootstrap-animate">
-                    <div class="probootstrap-block-image">
-                        <figure><img src="{{ asset('build/img_square_3.jpg') }}" alt="Free Bootstrap Template by uicookies.com"></figure>
-                        <div class="text">
-                            <span class="date">June 29, 2017</span>
-                            <h3><a href="#">Laboriosam Quod Dignissimos</a></h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
-                            <p class=""><a href="#" class="probootstrap-custom-link link-sm">Read More</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 probootstrap-animate">
-                    <div class="probootstrap-block-image">
-                        <figure><img src="{{ asset('build/img_square_4.jpg') }}" alt="Free Bootstrap Template by uicookies.com"></figure>
-                        <div class="text">
-                            <span class="date">June 29, 2017</span>
-                            <h3><a href="#">Laboriosam Quod Dignissimos</a></h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
-                            <p class=""><a href="#" class="probootstrap-custom-link link-sm">Read More</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="probootstrap-section probootstrap-bg-white" data-section="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 text-center probootstrap-animate">
-                    <div class="probootstrap-heading dark">
-                        <h1 class="primary-heading">Contact</h1>
-                        <h3 class="secondary-heading">Let's Chat</h3>
-                    </div>
-                    <p>Voluptatibus quaerat laboriosam fugit non Ut consequatur animi est molestiae enim a voluptate totam natus modi debitis dicta impedit voluptatum quod sapiente illo saepe explicabo quisquam perferendis labore et illum suscipit</p>
-                </div>
-                <div class="col-md-6 col-md-push-1 probootstrap-animate">
-                    <form method="post" class="probootstrap-form">
-                        <div class="form-group">
-                            <label for="c_name">Your Name</label>
-                            <div class="form-field">
-                                <input type="text" id="c_name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="c_email">Your Email</label>
-                            <div class="form-field">
-                                <input type="text" id="c_email" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="c_message">Your Message</label>
-                            <div class="form-field">
-                                <textarea name="c_message" id="c_message" cols="30" rows="10" class="form-control"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" name="c_submit" id="c_submit" value="Send Message" class="btn btn-primary btn-lg">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+        </div> <!-- end footer-main -->
 
-    <section class="probootstrap-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 probootstrap-animate">
-                    <div class="probootstrap-footer-widget">
-                        <h3>Locations</h3>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p> 198 West 21th Street, Suite 721 <br> New York NY 10016</p>
-                            </div>
-                            <div class="col-md-6">
-                                <p> 198 West 21th Street, Suite 721 <br> New York NY 10016</p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="row footer-bottom">
+
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>© Copyright YouCycle 2017</span>
                 </div>
-                <div class="col-md-6 probootstrap-animate">
-                    <div class="probootstrap-footer-widget">
-                        <h3>Open Hours</h3>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <p>Monday - Thursday <br> 5:30pm - 10:00pm</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p>Friday - Sunday <br> 5:30pm - 10:00pm</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p>Available for Catering <br> Email or Call Us</p>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="probootstrap-copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <p class="copyright-text">&copy; 2017 <a href="https://uicookies.com/">uiCookies:Resto</a>. All Rights Reserved. Images by <a href="https://graphicburger.com/">GraphicBurger</a> &amp; <a href="https://unsplash.com/">Unsplash</a></p>
-                </div>
-                <div class="col-md-4">
-                    <ul class="probootstrap-footer-social right">
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-instagram"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+
+        </div> <!-- end footer-bottom -->
+
+    </footer> <!-- end footer -->
+
 
 {% endblock %}
