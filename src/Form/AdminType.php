@@ -10,6 +10,7 @@ namespace App\Form;
 
 use App\Entity\Admin;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -27,9 +28,11 @@ class AdminType extends AbstractType
             ->add('firstname', TextType::class)
             ->add('pwd', RepeatedType::class, array(
                 'type' => PasswordType::class,
-                'first_option' => array('label' => 'Password'),
-                'second_option' => array('label' => 'Repeat Password'),
-            ));
+                'first_options' => array('label' => 'Password'),
+                'second_options' => array('label' => 'Repeat Password'),
+            ))
+//            ->add('city', IntegerType::class)
+        ;
     }
 
     public function buildLoginForm(FormBuilderInterface $builder)
