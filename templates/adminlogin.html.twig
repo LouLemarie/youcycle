@@ -21,11 +21,11 @@
                     <img src="{{ asset('./../build/img/logo.png') }}" alt="Logo">
                     <h3>Connexion</h3>
                     <input type="text" placeholder="email" value="{{ last_email }}"/>
-                    <input type="password" placeholder="password"/>
+                    <input type="password" placeholder="mot de passe"/>
                     <input type="hidden" name="_csrf_token"
                            value="{{ csrf_token('authenticate') }}">
                     <button>Connexion</button>
-                    <p class="message">Pas enregister? <a href="{{ path('add_register') }}">Créer un compte</a></p>
+                    <p class="message">Pas de compte? <a href="{{ path('add_register') }}">Créer un compte</a></p>
 
                 </form>
             </div>
