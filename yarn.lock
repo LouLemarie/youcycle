@@ -599,10 +599,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@symfony/webpack-encore@^0.22.0":
-  version "0.22.4"
-  resolved "https://registry.yarnpkg.com/@symfony/webpack-encore/-/webpack-encore-0.22.4.tgz#249609c784706aa3dac9243c55ac4ec667a26d6e"
-  integrity sha512-G324ofg+ThJhGT6BZhODbXMkb7QzL1HcL8O5iXlyNnk3/Bzha3XuV34/TzfWwIaRjIaJrD4CN4x9DNB1weqJLQ==
+"@symfony/webpack-encore@^0.21.0":
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/@symfony/webpack-encore/-/webpack-encore-0.21.1.tgz#a7b10197373386d6ad134d7d9fbb04b90543a65c"
+  integrity sha512-msg4GZ/XHqcrKqUiH6YhIdQUEMm/uX83ZwlZkdG6SVMPdRtj37z6Al7stv8MhoejQaH9ESz04jemgzGVPk660w==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-syntax-dynamic-import" "^7.0.0"
@@ -630,7 +630,7 @@
     webpack "^4.20.0"
     webpack-chunk-hash "^0.6.0"
     webpack-cli "^3.0.0"
-    webpack-dev-server "^3.1.14"
+    webpack-dev-server "^3.1.4"
     webpack-manifest-plugin "^2.0.2"
     webpack-sources "^1.3.0"
     yargs "^8.0.1"
@@ -3449,6 +3449,16 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
+leaflet.markercluster@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/leaflet.markercluster/-/leaflet.markercluster-1.4.1.tgz#b53f2c4f2ca7306ddab1dbb6f1861d5e8aa6c5e5"
+  integrity sha512-ZSEpE/EFApR0bJ1w/dUGwTSUvWlpalKqIzkaYdYB7jaftQA/Y2Jav+eT4CMtEYFj+ZK4mswP13Q2acnPBnhGOw==
+
+leaflet@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.4.0.tgz#d5f56eeb2aa32787c24011e8be4c77e362ae171b"
+  integrity sha512-x9j9tGY1+PDLN9pcWTx9/y6C5nezoTMB8BLK5jTakx+H7bPlnbCHfi9Hjg+Qt36sgDz/cb9lrSpNQXmk45Tvhw==
+
 load-json-file@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-2.0.0.tgz#7947e42149af80d696cbf797bcaabcfe1fe29ca8"
@@ -6077,7 +6087,7 @@ webpack-dev-middleware@^3.5.1:
     range-parser "^1.0.3"
     webpack-log "^2.0.0"
 
-webpack-dev-server@^3.1.14:
+webpack-dev-server@^3.1.4:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-3.2.1.tgz#1b45ce3ecfc55b6ebe5e36dab2777c02bc508c4e"
   integrity sha512-sjuE4mnmx6JOh9kvSbPYw3u/6uxCLHNWfhWaIPwcXWsvWOPN+nc5baq4i9jui3oOBRXGonK9+OI0jVkaz6/rCw==
