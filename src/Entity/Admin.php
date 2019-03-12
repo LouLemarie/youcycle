@@ -38,7 +38,7 @@ class Admin implements UserInterface
     private $pwd;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="array")
      */
     private $role;
 

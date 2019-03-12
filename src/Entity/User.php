@@ -7,7 +7,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User implements UserInterface
+class User
 {
     /**
      * @ORM\Id()
@@ -17,17 +17,17 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255 unique=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255 unique=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=255 unique=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $email;
 
@@ -36,20 +36,7 @@ class User implements UserInterface
      */
     private $newsletter;
 
-    /**
-     * @ORM\Column(type="string", length=255 unique=true)
-     */
-    private $username;
 
-    /**
-     * @ORM\Column(type="string", length=255 unique=true)
-     */
-    private $password;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $mail;
 
     public function getId(): ?int
     {
@@ -104,41 +91,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getUsername(): ?string
-    {
-        return $this->username;
-    }
 
-    public function setUsername(string $username): self
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
-    public function getPassword(): ?string
-    {
-        return $this->password;
-    }
-
-    public function setPassword(string $password): self
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    public function getMail(): ?string
-    {
-        return $this->mail;
-    }
-
-    public function setMail(string $mail): self
-    {
-        $this->mail = $mail;
-
-        return $this;
-    }
 
 
 }
