@@ -1,58 +1,70 @@
+window.onload = function () {
+    console.log('Page chargée ');
 
-var iconBase = './../build/img/glassLogo.png';
-var lat = 49.4412;
-var lon = 1.0911;
-var macarte = null;
-var markerCusters;
-var villes = {
-    "Rouen": { "lat": 49.4412, "lon": 1.0911 },
-    "Mont St Aignan": { "lat": 49.4673, "lon": 1.0806 },
-    "Bois Guillaume": { "lat": 49.4728, "lon": 1.1194 },
-    "Le Petit Quevilly": { "lat": 49.4239, "lon": 1.0573 },
-    "Sotteville les Rouen": { "lat": 49.4173, "lon": 1.0894 }
-};
-// Fonction d'initialisation de la carte
-function initMap() {
-    var markers = [];
-    macarte = L.map('map').setView([lat,lon], 11);
-    markerCusters = L.markerClusterGroup();
-    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-        attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
-        minZoom: 1,
-        maxZoom: 20
-    }).addTo(macarte);
-    for (ville in villes) {
-        var myIcon = L.icon({
-            iconUrl: iconBase,
-            iconSize: [25, 25],
-            iconAnchor: [25, 50],
-            popupAnchor: [-3, -76],
+var map = L.map('mapid').setView([43.610819, 3.876656], 13);
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiemFua2siLCJhIjoiY2p0NWthODUzMDU1bTN5bnZqd2syZWtjeiJ9.2BQH9higFVNhEeRDJ8kRrw'
+}).addTo(map);
+
+    geojson = L.geoJson(verre, {
+        style: function (feature) {
+            return feature.properties && feature.properties.style;
+        },
+        pointToLayer: function (feature, latlng) {
+            var marker =  L.marker(latlng)({
+                icon: {
+                    url: "http://maps.gstatic.com/intl/de_de/mapfiles/ms/micons/red-pushpin.png",
+                    size: {width: 26, height: 32},
+                    origin: {x: 0, y: 0},
+                    anchor: {
+                        x: "-10px",
+                        y: "-32px"
+                    }
+                }
+            });
+            marker.bindPopup('<b><u>Description de la benne</u></b><br>'
+                + '<b>Commune: </b>Montpellier<br>'
+                + '<b>La rue : </b>' + feature.properties.rue + '<br>'
+                + '<b>Coordonnées: </b>' + feature.geometry.coordinates + '<br>'
+
+            );
+            return marker ;
+
+        }
+    }).addTo(map);
+
+    /*var popup = L.popup();
+    function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(map);
+    }*/
+
+    map.locate({setView: false, watch: false}) /* This will return map so you can do chaining */
+        .on('locationfound', function(e){
+            var marker = L.marker([e.latitude, e.longitude]).bindPopup('Vous êtes ici :)');
+            var circle = L.circle([e.latitude, e.longitude], e.accuracy/2, {
+                weight: 1,
+                color: 'green',
+                fillColor: '#cacaca',
+                fillOpacity: 0.2
+            });
+            map.addLayer(marker);
+            map.addLayer(circle);
+        })
+        .on('locationerror', function(e){
+            console.log(e);
+            alert("Location access denied.");
         });
-        var marker = L.marker([villes[ville].lat, villes[ville].lon], { icon: myIcon }).addTo(macarte);
-        marker.bindPopup(ville);
-        markerCusters.addLayer(marker);
-        markers.push(marker);
-    }
-    var group = new L.featureGroup(markers);
-    macarte.fitBounds(group.getBounds().pad(0.5));
-    macarte.addLayer(markerCusters);
 
-    var geoSuccess = function (position) { // Ceci s'exécutera si l'utilisateur accepte la géolocalisation
-        startPos = position;
-        userlat = startPos.coords.latitude;
-        userlon = startPos.coords.longitude;
-        console.log("lat: " + userlat + " - lon: " + userlon);
-    };
-    var geoFail = function () { // Ceci s'exécutera si l'utilisateur refuse la géolocalisation
-        console.log("refus");
-    };
-    // La ligne ci-dessous cherche la position de l'utilisateur et déclenchera la demande d'accord
-    navigator.geolocation.getCurrentPosition(geoSuccess, geoFail);
-
-}
-
-
-window.onload = function(){
-    initMap();
+    map.on('click', onMapClick);
 };
+
+
+
+
 
