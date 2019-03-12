@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -12,11 +12,14 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/login", name="adminlogin", methods={"GET", "POST"})
      */
-    public function adminLoginRoute(Request $request, AuthenticationUtils $authenticationUtils)
+    public function adminLoginRoute(AuthenticationUtils $authenticationUtils) : Response
     {
         $error = $authenticationUtils->getLastAuthenticationError();
 
         $lastEmail = $authenticationUtils->getLastUsername();
+
+        dump($error);
+        dump($lastEmail);
 
         return $this->render('adminlogin.html.twig', [
             'controller_name' => 'Connexion Admin',
