@@ -153,7 +153,7 @@ class Admin implements UserInterface
 
     public function getUsername()
     {
-        $this->getEmail();
+        $this->getName();
     }
 
 }
