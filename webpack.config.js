@@ -51,18 +51,26 @@ Encore
     //.autoProvidejQuery()
     .autoProvideVariables({
         $:'jquery',
-        jQuery:'jquery',
-        'windows.jQuery': 'jquery'})
+
+        jQuery:'jquery', 'windows.jQuery': 'jquery'
+    })
+
+
+
 
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
     .copyFiles({
+
+        from: './assets/images',
+
         from: './assets/img',
         to: 'img/[path][name].[ext]'
     },{
         from: './assets/fonts',
         to: 'fonts/[path][name].[ext]'
+
     })
 ;
 
