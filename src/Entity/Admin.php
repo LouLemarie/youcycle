@@ -38,7 +38,7 @@ class Admin implements UserInterface
     private $pwd;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="array")
      */
     private $role;
 
@@ -104,24 +104,12 @@ class Admin implements UserInterface
         $this->pwd = $pwd;
     }
 
-    public function getPassword(): ?string
-    {
-        return $this->pwd;
-    }
-
-    public function setPassword(string $pwd): self
-    {
-        $this->pwd = $pwd;
-
-        return $this;
-    }
-
-    public function getRoles(): ?int
+    public function getRoles(): ?array
     {
         return $this->role;
     }
 
-    public function setRoles(int $role): self
+    public function setRoles(array $role): self
     {
         $this->role = $role;
 
@@ -134,6 +122,19 @@ class Admin implements UserInterface
     }
 
     //Fonction UserInterface
+
+
+    public function getPassword(): ?string
+    {
+        return $this->pwd;
+    }
+
+    public function setPassword(string $pwd): self
+    {
+        $this->pwd = $pwd;
+
+        return $this;
+    }
 
     public function setCity(?City $city): self
     {

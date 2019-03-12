@@ -17,7 +17,8 @@ class AddAdminController extends AbstractController
     public function index(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $admin = new Admin();
-        $admin->setRoles(1);
+        $role[0] = 'ROLE_ADMIN';
+        $admin->setRoles($role);
         $form = $this->createForm(AdminType::class, $admin);
 
         $form->handleRequest($request);
@@ -34,7 +35,7 @@ class AddAdminController extends AbstractController
         }
 
         return $this->render('add_admin.html.twig', [
-            'controller_name' => 'Inscritpion Admin',
+            'controller_name' => 'Inscription Admin',
             'form' => $form->createView(),
         ]);
     }
