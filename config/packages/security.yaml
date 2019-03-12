@@ -26,9 +26,13 @@ security:
                 path: /logout
                 target: /home
 
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+
     role_hierarchy:
         ROLE_ADMIN: ROLE_ADMIN
-        ROLE_SUPER_ADMIN: ROLE_SUPER_ADMINcd
+        ROLE_SUPER_ADMIN: ROLE_SUPER_ADMIN
 
             # activate different ways to authenticate
 
