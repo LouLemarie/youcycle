@@ -1,3 +1,4 @@
+// fix
 {
     "devDependencies": {
         "@symfony/webpack-encore": "^0.22.0",
