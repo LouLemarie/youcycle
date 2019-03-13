@@ -44,7 +44,7 @@ a {
 }
 
 a:hover, a:focus, a:active {
-    color: #39b54a;
+    color: #008B35;
 }
 
 a:hover, a:active {
@@ -314,7 +314,7 @@ ul.disc li::before {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #39b54a;
+    background: #008B35;
     position: absolute;
     left: -17px;
     top: 11px;
@@ -323,7 +323,7 @@ ul.disc li::before {
 
 dt {
     margin: 0;
-    color: #39b54a;
+    color: #008B35;
 }
 
 dd {
@@ -449,7 +449,7 @@ form,
 }
 
 .pace .pace-progress {
-    background: #39b54a;
+    background: #008B35;
     position: fixed;
     z-index: 900;
     top: 0;
@@ -474,9 +474,9 @@ form,
     left: 0;
     right: 0;
     bottom: 0;
-    background: #050505;
+    background: #282D31;
     z-index: 800;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     margin: 0 auto;
     display: table;
@@ -493,7 +493,7 @@ form,
 }
 
 .line-scale-pulse-out > div {
-    background-color: #39b54a;
+    background-color: #008B35;
     width: 4px;
     height: 35px;
     border-radius: 2px;
@@ -570,7 +570,7 @@ select {
     outline: none;
     color: #333333;
     font-family: "montserrat-light", sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     line-height: 3rem;
     max-width: 100%;
     background: transparent;
@@ -719,7 +719,7 @@ textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    -webkit-text-fill-color: #39b54a;
+    -webkit-text-fill-color: #008B35;
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -778,8 +778,8 @@ button.btn--primary,
 input[type="submit"].btn--primary,
 input[type="reset"].btn--primary,
 input[type="button"].btn--primary {
-    background: #249988;
-    border-color: #249988;
+    background: #008B35;
+    border-color: #008B35;
     color: #FFFFFF;
 }
 
@@ -793,8 +793,8 @@ button.btn--primary:focus,
 input[type="submit"].btn--primary:focus,
 input[type="reset"].btn--primary:focus,
 input[type="button"].btn--primary:focus {
-    background: #249988;
-    border-color: #249988;
+    background: #008B35;
+    border-color: #008B35;
 }
 
 
@@ -818,8 +818,8 @@ input[type="button"].btn--primary:focus {
 
 .btn--stroke, button.btn--stroke {
     background: transparent !important;
-    border: 0.2rem solid #39b54a;
-    color: #39b54a;
+    border: 0.2rem solid #008B35;
+    color: #008B35;
 }
 
 .btn--stroke:hover, button.btn--stroke:hover {
@@ -1008,7 +1008,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     line-height: 1.333;
     text-transform: uppercase;
     letter-spacing: .25rem;
-    color: #39b54a;
+    color: #008B35;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -1219,7 +1219,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     letter-spacing: .25rem;
     margin-bottom: 4.8rem;
     margin-top: .9rem;
-    color: #39b54a;
+    color: #008B35;
 }
 
 .header-nav p {
@@ -1357,7 +1357,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: .3rem;
-    color: #39b54a;
+    color: #008B35;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
@@ -1369,7 +1369,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .header-menu-toggle.opaque .header-menu-text {
     background-color: white;
     opacity: .9;
-    border-radius: 5px 0 0 5px;
+    border-radius: 3px 0 0 3px;
 }
 
 .header-menu-toggle:hover, .header-menu-toggle:focus {
@@ -1740,8 +1740,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .home-content__scroll a::before {
-    border-bottom: 2px solid #39b54a;
-    border-right: 2px solid #39b54a;
+    border-bottom: 2px solid #008B35;
+    border-right: 2px solid #008B35;
     content: '';
     display: block;
     height: 8px;
@@ -1765,7 +1765,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     display: block;
     width: 2px;
     height: 10.2rem;
-    background-color: #39b54a;
+    background-color: #008B35;
     position: absolute;
     right: 7.2rem;
     bottom: 0;
@@ -1825,7 +1825,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .home-social span {
-    color: #39b54a;
+    color: #008B35;
     right: 4.5rem;
     font-size: 1.3rem;
     opacity: 0;
@@ -2248,7 +2248,7 @@ html.no-csstransitions .home-content__main {
 .s-features {
     background-color: #FDFBF9;
     margin: auto;
-    height: 120vh;
+    min-height: 750px;
 }
 
 .features-list {
@@ -2314,7 +2314,7 @@ html.no-csstransitions .home-content__main {
 
 .services-list .service-icon {
     float: left;
-    color: #39b54a;
+    color: #008B35;
     font-size: 4.8rem;
     margin-top: -.6rem;
 }
@@ -2345,6 +2345,34 @@ html.no-csstransitions .home-content__main {
     background-color: #F5B92A;
     text-align: center;
     font-size: 2.5em;
+}
+
+.parallax-1_ptitle-1 {
+    margin-top: 0px;
+    float: right;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #3981EF;
+}
+
+.parallax-2_ptitle-2 {
+    margin-top: 0px;
+    float: left;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #F5B92A;
+}
+
+.parallax-1 .ptitle {
+    float: right;
+}
+
+.parallax-2 .ptitle {
+    clear: right;
 }
 
 .parallax-1 p, .parallax-2 p {
@@ -2514,7 +2542,7 @@ html.no-csstransitions .home-content__main {
     padding: 0 2rem;
     margin: 0;
     color: #FFFFFF;
-    background: #39b54a;
+    background: #008B35;
 }
 
 .s-contact .form-field label::after {
@@ -2525,14 +2553,14 @@ html.no-csstransitions .home-content__main {
     margin-top: -6px;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-right: 5px solid #39b54a;
+    border-right: 5px solid #008B35;
 }
 
 .contact__line {
     display: block;
     width: 2px;
     height: 20.4rem;
-    background-color: #39b54a;
+    background-color: #008B35;
     position: absolute;
     left: 50%;
     top: -10.2rem;
@@ -2559,7 +2587,7 @@ html.no-csstransitions .home-content__main {
 
 .contact-content h5 {
     margin-top: 0;
-    color: #39b54a;
+    color: #008B35;
 }
 
 .contact-content input[type="email"],
@@ -2586,7 +2614,7 @@ html.no-csstransitions .home-content__main {
 .contact-content textarea:focus,
 .contact-content select:focus {
     color: #FFFFFF;
-    border-bottom: 1px solid #39b54a;
+    border-bottom: 1px solid #008B35;
 }
 
 .contact-content button,
@@ -2677,7 +2705,7 @@ html.no-csstransitions .home-content__main {
 
 .contact-social li a:hover,
 .contact-social li a:focus {
-    color: #39b54a;
+    color: #008B35;
 }
 
 .contact-social li:last-child {
@@ -2700,7 +2728,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .message-success {
-    color: #39b54a;
+    color: #008B35;
 }
 
 .message-warning i, .message-success i {
@@ -2742,7 +2770,6 @@ html.no-csstransitions .home-content__main {
 
 /* ===================================================================
  * # clients
- *
  * ------------------------------------------------------------------- */
 .s-clients {
     padding-top: 16.2rem;
@@ -3124,7 +3151,7 @@ footer a {
 }
 
 footer a:hover, footer a:focus, footer a:active {
-    color: #39b54a;
+    color: #008B35;
 }
 
 footer .row {
@@ -3216,8 +3243,8 @@ footer .row {
     top: 0;
     right: 0;
     color: #FFFFFF;
-    background: #39b54a;
-    border-color: #39b54a;
+    background: #008B35;
+    border-color: #008B35;
     padding: 0 20px;
 }
 
