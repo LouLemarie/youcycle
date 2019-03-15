@@ -21,11 +21,6 @@ Encore
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
-    .copyFiles({
-        from: './assets/img',
-        to: 'img/[path][name].[ext]'
-    })
-
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 
@@ -53,18 +48,11 @@ Encore
     //.enableTypeScriptLoader()
 
     // uncomment if you're having problems with a jQuery plugin
-    .autoProvidejQuery()
-/*.autoProvideVariables( {
-    $:'jquery',
-    jQuery:'jquery',
-<<<<<<< HEAD
-    'window.jQuery': 'jquery'
-})*/
-// uncomment if you use API Platform Admin (composer req api-admin)
-//.enableReactPreset()
-//.addEntry('admin', './assets/js/admin.js')
-=======
-    'windows.jQuery': 'jquery'})
+    //.autoProvidejQuery()
+    .autoProvideVariables({
+        $:'jquery',
+        jQuery:'jquery',
+        'windows.jQuery': 'jquery'})
 
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
@@ -76,7 +64,6 @@ Encore
         from: './assets/fonts',
         to: 'fonts/[path][name].[ext]'
     })
->>>>>>> ae90c9b01ee68a3e5e90c2aed2df19ab04154069
 ;
 
 module.exports = Encore.getWebpackConfig();
