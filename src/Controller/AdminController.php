@@ -8,9 +8,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/admin/login", name="adminlogin")
+     * @Route("/admin/login", name="adminlogin", methods={"GET", "POST"})
      */
-    public function adminloginroute()
+    public function adminLoginRoute()
     {
         return $this->render('adminlogin.html.twig', [
             'controller_name' => 'Connexion Admin',
@@ -20,7 +20,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin/dashboard", name="admindashboard")
      */
-    public function admindashboardroute()
+    public function adminDashboardRoute()
     {
         return $this->render('admindashboard.html.twig', [
             'controller_name' => 'Dashboard Admin',

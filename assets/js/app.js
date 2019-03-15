@@ -7,6 +7,7 @@
 
 // any CSS you require will output into a single css file (app.css in this case)
 
+
 global.$ = global.jQuery = $;
 
 
@@ -37,6 +38,10 @@ require('./jquery-3.2.1.min.js');
 require('./plugins.js');
 require('./main.js');
 require('./searchbar.js');
+
+
+require('../css/app.css');
+require('../js/map.js');
 
 
 

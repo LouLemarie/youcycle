@@ -2,7 +2,10 @@
 /.env.local
 /.env.local.php
 /.env.*.local
-/public/bundles/
+/public/bundles/sonataadmin/vendor
+/public/bundles/sonataadmin/famfamfam
+/public/bundles/sonataadmin/jquery
+/public/bundles/sonatacore
 /var/
 /vendor/
 /public/
