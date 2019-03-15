@@ -1382,7 +1382,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     top: 0;
     left: -70px;
     width: 70px;
-    padding-left: 12px;
 }
 
 .header-menu-icon {
@@ -1696,7 +1695,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .home-content__buttons {
     padding-top: 6rem;
-    text-align: left;
+    text-align: center;
     margin: 0 auto;
     width: 450px;
 }
@@ -1705,7 +1704,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     width: 215px;
     border-color: #FFFFFF;
     color: #FFFFFF;
-    margin: 1.5rem 1.5rem 0 0;
+    margin: 1.5rem 1rem 0 0;
     letter-spacing: .25rem;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
