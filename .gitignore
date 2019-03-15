@@ -9,10 +9,7 @@
 /var/
 /vendor/
 /public/
-composer.lock
-package-lock.json
-package.json
-yarn.lock
+
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
