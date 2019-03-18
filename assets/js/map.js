@@ -1,7 +1,7 @@
 window.onload = function () {
     console.log('Page chargée ');
 
-var map = L.map('mapid').setView([43.610819, 3.876656], 13);
+var map = L.map('map').setView([43.610819, 3.876656], 13);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -14,27 +14,25 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
             return feature.properties && feature.properties.style;
         },
         pointToLayer: function (feature, latlng) {
-            var marker =  L.marker(latlng)({
-                icon: {
-                    url: "http://maps.gstatic.com/intl/de_de/mapfiles/ms/micons/red-pushpin.png",
-                    size: {width: 26, height: 32},
-                    origin: {x: 0, y: 0},
-                    anchor: {
-                        x: "-10px",
-                        y: "-32px"
-                    }
-                }
+            var icon = L.icon ({
+                iconUrl:"build/img/glassLogo.png",
+                iconSize: [42, 45]
             });
+            var markersCluster = new L.MarkerClusterGroup();
+            var marker =  L.marker(latlng, {icon: icon});
+            markersCluster.addLayer(marker);
+            map.addLayer(markersCluster);
             marker.bindPopup('<b><u>Description de la benne</u></b><br>'
                 + '<b>Commune: </b>Montpellier<br>'
                 + '<b>La rue : </b>' + feature.properties.rue + '<br>'
-                + '<b>Coordonnées: </b>' + feature.geometry.coordinates + '<br>'
-
+                + '<b>Coordonnées exactes: </b>' + feature.geometry.coordinates + '<br>'
             );
             return marker ;
 
         }
+
     }).addTo(map);
+
 
     /*var popup = L.popup();
     function onMapClick(e) {
@@ -61,7 +59,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
             alert("Location access denied.");
         });
 
-    map.on('click', onMapClick);
+    /*map.on('click', onMapClick);*/
 };
 
 
