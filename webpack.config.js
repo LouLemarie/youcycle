@@ -51,10 +51,8 @@ Encore
     //.autoProvidejQuery()
     .autoProvideVariables({
         $:'jquery',
-
         jQuery:'jquery', 'windows.jQuery': 'jquery'
     })
-
 
 
 
@@ -62,15 +60,7 @@ Encore
     //.enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
     .copyFiles({
-
         from: './assets/images',
-
-        from: './assets/img',
-        to: 'img/[path][name].[ext]'
-    },{
-        from: './assets/fonts',
-        to: 'fonts/[path][name].[ext]'
-
     })
 ;
 

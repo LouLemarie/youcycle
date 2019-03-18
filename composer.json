@@ -6,12 +6,8 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "sensio/framework-extra-bundle": "^5.1",
-        "sonata-project/admin-bundle": "^3.46",
-        "sonata-project/block-bundle": "^3.15",
-        "sonata-project/doctrine-orm-admin-bundle": "^3.8",
         "symfony/asset": "4.2.*",
         "symfony/console": "4.2.*",
-        "symfony/debug": "4.2.*",
         "symfony/dotenv": "4.2.*",
         "symfony/expression-language": "4.2.*",
         "symfony/flex": "^1.1",
@@ -20,6 +16,7 @@
         "symfony/monolog-bundle": "^3.1",
         "symfony/orm-pack": "*",
         "symfony/process": "4.2.*",
+        "symfony/security": "4.2.*",
         "symfony/security-bundle": "4.2.*",
         "symfony/serializer-pack": "*",
         "symfony/swiftmailer-bundle": "^3.1",
@@ -31,9 +28,10 @@
         "symfony/yaml": "4.2.*"
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.1",
         "symfony/debug-pack": "*",
-        "symfony/maker-bundle": "^1.0",
-        "symfony/profiler-pack": "*",
+        "symfony/maker-bundle": "^1.11",
+        "symfony/profiler-pack": "^1.0",
         "symfony/test-pack": "*",
         "symfony/web-server-bundle": "4.2.*"
     },
