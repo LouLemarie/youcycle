@@ -3,6 +3,7 @@
 {% block title %}Connexion Admin!{% endblock %}
 
 {% block body %}
+<<<<<<< HEAD
     {% if error %}
         <div class="alert alert-danger">
             {#{{ dump(error) }}#}
@@ -29,3 +30,113 @@
             </div>
         </div>
 {% endblock %}
+=======
+<style>
+    body{ background-color: #282D31;}
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .form {
+        position: relative;
+        z-index: 1;
+        background: #249899;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+    .form input {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+    .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #282D31;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+    }
+    .form button:hover,.form button:active,.form button:focus {
+        background: #4b575d;
+    }
+
+    .form .register-form {
+        display: none;
+    }
+    .form img { width: 50%;}
+</style>
+    {% extends '@SonataAdmin/standard_layout.html.twig' %}
+
+    {% block sonata_nav %}
+    {% endblock sonata_nav %}
+
+    {% block logo %}
+    {% endblock logo %}
+
+    {% block sonata_left_side %}
+    {% endblock sonata_left_side %}
+
+    {% block body_attributes %}class="sonata-bc login-page"{% endblock %}
+
+    {% block sonata_wrapper %}
+        <div class="login-box">
+            <div class="login-logo">
+                <a href="{{ path('sonata_admin_dashboard') }}">
+                    <span>Login</span>
+                </a>
+            </div>
+            <div class="login-box-body">
+                {% block sonata_user_login_form %}
+                    {% block sonata_user_login_error %}
+                        {% if error %}
+                            <div class="alert alert-danger">
+                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                            </div>
+                        {% endif %}
+                    {% endblock %}
+                    {% for label, flashes in app.session.flashbag.all %}
+                        {% for flash in flashes %}
+                            <div class="alert alert-{{ label }}">
+                                {{ flash }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                    <p class="login-box-msg">{{ 'Authentication'|trans }}</p>
+                    <form action="{{ path("admin_login") }}" method="post" role="form">
+                        {{ form_row(form._token) }}
+
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control" id="username" name="{{ form.email.vars.full_name }}" value="{{ last_username }}" required="required" placeholder="Email"/>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <input type="password" class="form-control" id="password" name="{{ form.password.vars.full_name }}" required="required" placeholder="Password"/>
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                {% endblock %}
+            </div>
+        </div>
+    {% endblock sonata_wrapper %}
+>>>>>>> 8f5e784ff16707860e4804bd79094eec39f5984c

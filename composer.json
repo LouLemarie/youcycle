@@ -29,7 +29,11 @@
         "symfony/yaml": "4.2.*"
     },
     "require-dev": {
+<<<<<<< HEAD
         "doctrine/doctrine-fixtures-bundle": "^3.1",
+=======
+        "sonata-project/easy-extends-bundle": "^2.5",
+>>>>>>> 8f5e784ff16707860e4804bd79094eec39f5984c
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.11",
         "symfony/profiler-pack": "^1.0",
