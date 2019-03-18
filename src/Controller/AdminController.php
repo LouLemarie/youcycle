@@ -35,4 +35,9 @@ class AdminController extends AbstractController
             'controller_name' => 'Dashboard Admin',
         ]);
     }
+
+    public function adminLogoutRoute()
+    {
+        return $this->redirectToRoute('logout');
+    }
 }

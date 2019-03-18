@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 18/03/2019
- * Time: 14:20
- */
 
 namespace App\Security;
 
@@ -34,7 +28,6 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     private $router;
     private $csrfTokenManager;
     private $passwordEncoder;
-    private $urlGenerator;
 
     public function __construct(EntityManagerInterface $entityManager, RouterInterface $router, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
     {
@@ -89,7 +82,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey))
             return new RedirectResponse($targetPath);
 
-            return new RedirectResponse($this->urlGenerator->generate('home'));
+        return new RedirectResponse($this->router->generate('home'));
     }
 
     protected function getLoginUrl()

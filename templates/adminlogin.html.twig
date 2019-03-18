@@ -5,6 +5,7 @@
 {% block body %}
     {% if error %}
         <div class="alert alert-danger">
+            {#{{ dump(error) }}#}
             {{ error.messageKey|trans(error.messageData, 'security') }}
         </div>
     {% endif %}
@@ -22,8 +23,8 @@
                     <input type="hidden" name="_csrf_token"
                            value="{{ csrf_token('authenticate') }}"
                     >
-                    <button class="btn btn-lg btn-primary" type="submit">login</button>
-                    <p class="message">Pas encore inscrit? <a href="/{{ path('add_register') }}">Créer un compte</a></p>
+                    <button type="submit">login</button>
+                    <p class="message"> Pas encore inscrit? <a href="{{ path('add_register') }}"> Créer un compte </a></p>
                 </form>
             </div>
         </div>

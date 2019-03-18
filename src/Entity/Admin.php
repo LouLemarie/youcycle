@@ -116,12 +116,12 @@ class Admin implements UserInterface
         return $this;
     }
 
-    public function getRoles(): ?int
+    public function getRoles(): ?array
     {
         return $this->role;
     }
 
-    public function setRoles(int $role): self
+    public function setRoles(array $role): self
     {
         $this->role = $role;
 

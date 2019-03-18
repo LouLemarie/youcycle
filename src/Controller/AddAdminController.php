@@ -17,7 +17,7 @@ class AddAdminController extends AbstractController
     public function index(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $admin = new Admin();
-        $admin->setRoles(1);
+        $admin->setRoles(['ROLE_ADMIN']);
         $form = $this->createForm(AdminType::class, $admin);
 
         $form->handleRequest($request);

@@ -9,10 +9,18 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+            anonymous: ~
             guard:
                 authenticators:
-                    -App\Security\LoginFormAuthenticator
+                    - App\Security\LoginFormAuthenticator
+            form_login:
+                login_path: adminlogin
+                check_path: adminlogin
+            logout:
+                path: app_logout
+        role_hierarchy:
+            ROLE_ADMIN: ROLE_ADMIN
+            ROLE_SUPER_ADMIN: ROLE_SUPER_ADMIN
 
             # activate different ways to authenticate
 
