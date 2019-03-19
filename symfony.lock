@@ -162,8 +162,6 @@
             "./config/packages/sensio_framework_extra.yaml"
         ]
     },
-<<<<<<< HEAD
-=======
     "sonata-project/admin-bundle": {
         "version": "3.31",
         "recipe": {
@@ -211,7 +209,6 @@
     "sonata-project/exporter": {
         "version": "2.0.1"
     },
->>>>>>> 8f5e784ff16707860e4804bd79094eec39f5984c
     "swiftmailer/swiftmailer": {
         "version": "v6.1.3"
     },

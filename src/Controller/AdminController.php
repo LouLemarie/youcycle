@@ -36,8 +36,11 @@ class AdminController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/logout", name="security_logout")
+     */
     public function adminLogoutRoute()
     {
-        return $this->redirectToRoute('logout');
+        throw new \Exception('This should never be reached!');
     }
 }
