@@ -2336,6 +2336,13 @@ html.no-csstransitions .home-content__main {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+/*.parallax-1 p {*/
+    /*background-color: black;*/
+/*}*/
+
+/*#features-recycling{*/
+    /*opacity: 0.33!important;*/
+/*}*/
 
 .ptitle {
     top: 40%;
@@ -2384,18 +2391,28 @@ html.no-csstransitions .home-content__main {
     line-height: 1.48em;
 
 }
+.koko{
+    background-color: rgba(0, 0, 0, 0.59) !important;
+}
 
 .parallax-1 {
     background-image: url("../images/sake-bottles.jpg");
     min-height: 150vh;
     color: #FDFBF9;
+
 }
 
 .parallax-2 {
     background-image: url("../images/camion-benne.jpg");
     min-height: 150vh;
     color: #FDFBF9;
+
 }
+
+/*.bibibi{*/
+    /*background-color: rgba(0, 0, 0, 0.59) !important;*/
+
+/*}*/
 
 
 
