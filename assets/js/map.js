@@ -6,8 +6,10 @@ window.onload = function () {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1IjoiemFua2siLCJhIjoiY2p0NWthODUzMDU1bTN5bnZqd2syZWtjeiJ9.2BQH9higFVNhEeRDJ8kRrw'
+        accessToken: 'pk.eyJ1IjoiemFua2siLCJhIjoiY2p0Zm1sN2JoMGMxMzQ1bGh2eHdocWZkciJ9.RpxtpjYNa4wrJFMsxsvYhQ'
     }).addTo(map);
+
+    L.control.layers(map, null, {position: 'topright'}).addTo(map);
 
     geojson = L.geoJson(verre, {
         style: function (feature) {
