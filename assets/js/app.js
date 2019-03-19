@@ -41,6 +41,7 @@ require('./searchbar.js');
 
 
 require('../css/app.css');
+require('../css/form.css');
 require('../js/map.js');
 
 

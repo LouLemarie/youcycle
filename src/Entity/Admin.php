@@ -38,9 +38,9 @@ class Admin implements UserInterface
     private $pwd;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="json")
      */
-    private $role;
+    private $role = [];
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\City", cascade={"persist", "remove"})
@@ -116,14 +116,14 @@ class Admin implements UserInterface
         return $this;
     }
 
-    public function getRoles(): ?int
+    public function getRoles(): ?array
     {
-        return $this->role;
+        return $this->role = array();
     }
 
-    public function setRoles(int $role): self
+    public function setRoles(array $role): self
     {
-        $this->role = $role;
+        $this->role[0] = $role;
 
         return $this;
     }
@@ -133,7 +133,7 @@ class Admin implements UserInterface
         return $this->city;
     }
 
-    //Fonction UserInterface
+//    //Fonction UserInterface
 
     public function setCity(?City $city): self
     {

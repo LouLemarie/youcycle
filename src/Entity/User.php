@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
@@ -35,8 +35,6 @@ class User
      * @ORM\Column(type="boolean")
      */
     private $newsletter;
-
-
 
     public function getId(): ?int
     {
@@ -90,8 +88,5 @@ class User
 
         return $this;
     }
-
-
-
 
 }
