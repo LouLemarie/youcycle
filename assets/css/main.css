@@ -2353,7 +2353,7 @@ html.no-csstransitions .home-content__main {
 
 .ptitle {
     top: 40%;
-    width: 30%;
+    width: 450px;
     color: #282D31;
     background-color: #F5B92A;
     text-align: center;
@@ -2363,7 +2363,7 @@ html.no-csstransitions .home-content__main {
 .parallax-1_ptitle-1 {
     margin-top: 0px;
     float: right;
-    height: 400px;
+    height: 350px;
     position: absolute;
     top: 0;
     right: 0;
@@ -2373,7 +2373,7 @@ html.no-csstransitions .home-content__main {
 .parallax-2_ptitle-2 {
     margin-top: 0px;
     float: left;
-    height: 400px;
+    height: 350px;
     position: absolute;
     top: 0;
     left: 0;
@@ -2388,10 +2388,10 @@ html.no-csstransitions .home-content__main {
     clear: right;
 }
 
-.parallax-1 p, .parallax-2 p {
+.parallax-1 .pquote, .parallax-2 .pquote {
     position: relative;
-    top: 35%;
-    font-size: 1.3em;
+    top: -100%;
+    font-size: 0.75em;
     text-align: center;
     margin: auto;
     margin-top: 400px;
@@ -2399,15 +2399,27 @@ html.no-csstransitions .home-content__main {
     line-height: 1.48em;
 }
 
+.parallax-1 .ptext, .parallax-2 .ptext {
+    position: relative;
+    top: -70%;
+    font-size: 1.3em;
+    text-align: center;
+    margin: auto;
+    margin-top: 400px;
+    margin-bottom: 125px;
+    width: 80%;
+    line-height: 1.48em;
+}
+
 .parallax-1 {
     background-image: url("../images/sake-bottles.jpg");
-    min-height: 150vh;
+    display: block;
     color: #FDFBF9;
 }
 
 .parallax-2 {
     background-image: url("../images/camion-benne.jpg");
-    min-height: 150vh;
+    display: block;
     color: #FDFBF9;
 }
 
@@ -2466,7 +2478,10 @@ html.no-csstransitions .home-content__main {
 
 @media only screen and (max-width: 600px) {
     .s-services {
-        padding-top: 12rem;
+        /*padding-top: 12rem;*/
+    }
+    .parallax-1 p, .parallax-2 p {
+        width: 100%;
     }
     .services-list .service-item:nth-child(n) {
         padding-right: 10px;
