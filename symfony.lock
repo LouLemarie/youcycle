@@ -171,6 +171,7 @@
             "./config/packages/sensio_framework_extra.yaml"
         ]
     },
+
     "sonata-project/admin-bundle": {
         "version": "3.31",
         "recipe": {
@@ -206,14 +207,12 @@
     "sonata-project/doctrine-extensions": {
         "version": "1.2.0"
     },
+
     "sonata-project/doctrine-orm-admin-bundle": {
         "version": "3.8.3"
     },
     "sonata-project/easy-extends-bundle": {
         "version": "2.5.0"
-    },
-    "sonata-project/exporter": {
-        "version": "2.0.1"
     },
     "swiftmailer/swiftmailer": {
         "version": "v6.1.3"
