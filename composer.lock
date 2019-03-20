@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-
-    "content-hash": "0851997a27cafd0de2d0248d57fc8cfc",
+    "content-hash": "0f83349634d7a18914c4534fdf95e166",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -6135,8 +6134,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2019-01-24T21:39:51+00:00"
-
+            "time": "2019-02-18T06:49:49+00:00"
         },
         {
             "name": "symfony/profiler-pack",
