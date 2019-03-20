@@ -159,10 +159,8 @@
                     type: "POST",
                     url: "inc/sendEmail.php",
                     data: $(form).serialize(),
-                    beforeSend: function() { 
-    
+                    beforeSend: function() {
                         sLoader.slideDown("slow");
-    
                     },
                     success: function(msg) {
     
@@ -182,11 +180,9 @@
     
                     },
                     error: function() {
-    
                         sLoader.slideUp("slow"); 
                         $('.message-warning').html("Something went wrong. Please try again.");
                         $('.message-warning').slideDown("slow");
-    
                     }
     
                 });
