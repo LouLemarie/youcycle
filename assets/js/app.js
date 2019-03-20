@@ -13,6 +13,7 @@ global.$ = global.jQuery = $;
 // CSS
 require('../css/base.css');
 require('../css/main.css');
+require('../css/animate.css');
 
 // Fonts
 require('../css/font-awesome/css/font-awesome.css');
