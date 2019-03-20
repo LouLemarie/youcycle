@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CollectionRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\CollectinRepository")
  */
-class Collection
+class Collectin
 {
     /**
      * @ORM\Id()
@@ -27,10 +29,10 @@ class Collection
     private $end_co;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\city", inversedBy="collection")
+     * @ORM\ManyToOne(targetEntity="App\Entity\City", inversedBy="collectin")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $city;
+    private $City;
 
     public function getId(): ?int
     {
@@ -61,14 +63,14 @@ class Collection
         return $this;
     }
 
-    public function getCity(): ?city
+    public function getCity(): ?City
     {
-        return $this->city;
+        return $this->City;
     }
 
-    public function setCity(?city $city): self
+    public function setCity(?City $City): self
     {
-        $this->city = $city;
+        $this->City = $City;
 
         return $this;
     }

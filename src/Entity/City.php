@@ -34,15 +34,15 @@ class City
     private $bin;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Collection", mappedBy="city")
+     * @ORM\OneToMany(targetEntity="App\Entity\Collectin", mappedBy="city")
      */
-    private $collection;
+    private $collectin;
 
 
     public function __construct()
     {
         $this->bin = new ArrayCollection();
-        $this->collection = new ArrayCollection();
+        $this->collectin = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -106,30 +106,30 @@ class City
     }
 
     /**
-     * @return Collection|Collection[]
+     * @return Collection|Collectin[]
      */
-    public function getCollection(): Collection
+    public function getCollectin(): Collection
     {
-        return $this->collection;
+        return $this->collectin;
     }
 
-    public function addCollection(Collection $collection): self
+    public function addCollectin(Collectin $collectin): self
     {
-        if (!$this->collection->contains($collection)) {
-            $this->collection[] = $collection;
-            $collection->setCity($this);
+        if (!$this->collectin->contains($collectin)) {
+            $this->collectin[] = $collectin;
+            $collectin->setCity($this);
         }
 
         return $this;
     }
 
-    public function removeCollection(Collection $collection): self
+    public function removeCollectin(Collectin $collectin): self
     {
-        if ($this->collection->contains($collection)) {
-            $this->collection->removeElement($collection);
+        if ($this->collectin->contains($collectin)) {
+            $this->collectin->removeElement($collectin);
             // set the owning side to null (unless already changed)
-            if ($collection->getCity() === $this) {
-                $collection->setCity(null);
+            if ($collectin->getCity() === $this) {
+                $collectin->setCity(null);
             }
         }
 

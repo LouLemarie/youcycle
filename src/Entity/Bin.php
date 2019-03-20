@@ -34,10 +34,10 @@ class Bin
     private $volume;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\city", inversedBy="bin")
+     * @ORM\ManyToOne(targetEntity="App\Entity\City", inversedBy="bin")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $city;
+    private $City;
 
 
 
@@ -91,14 +91,14 @@ class Bin
         return $this;
     }
 
-    public function getCity(): ?city
+    public function getCity(): ?City
     {
-        return $this->city;
+        return $this->City;
     }
 
-    public function setCity(?city $city): self
+    public function setCity(?City $City): self
     {
-        $this->city = $city;
+        $this->City = $City;
 
         return $this;
     }
