@@ -817,9 +817,14 @@ input[type="button"].btn--primary:focus {
 }
 
 .btn--stroke, button.btn--stroke {
-    background: transparent !important;
-    border: 0.2rem solid #008B35;
-    color: #008B35;
+    background: transparent;
+    border: 0.3rem solid #FDFBF9;
+    color: #FDFBF9;
+}
+
+.btn--stroke--submit {
+    background: #F5B92A !important;
+    border: 0.2rem solid #F5B92A;
 }
 
 .btn--stroke:hover, button.btn--stroke:hover {
@@ -1363,7 +1368,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .header-menu-toggle.opaque {
-    background-color: #249988;
+    background-color: #008B35;
 }
 
 .header-menu-toggle.opaque .header-menu-text {
@@ -1694,6 +1699,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     transition: transform 0.2s 0.2s, opacity 0.1s 0.3s, -webkit-transform 0.2s 0.2s;
 }
 
+img.mail-icon {
+    width: 70px;
+    position: absolute;
+    left: -150px;
+    bottom: -310px;
+    /*filter: invert(43%) sepia(38%) saturate(4737%) hue-rotate(203deg) brightness(100%) contrast(88%);*/
+    filter: invert(97%) sepia(91%) saturate(63%) hue-rotate(348deg) brightness(103%) contrast(98%);
+}
+
 .home-content__buttons {
     padding-top: 6rem;
     text-align: left;
@@ -1703,7 +1717,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .home-content__buttons .btn {
     width: 215px;
-    border-color: #FFFFFF;
     color: #FFFFFF;
     margin: 1.5rem 1.5rem 0 0;
     letter-spacing: .25rem;
@@ -2376,14 +2389,14 @@ html.no-csstransitions .home-content__main {
 }
 
 .parallax-1 p, .parallax-2 p {
-    position: absolute;
+    position: relative;
     top: 35%;
     font-size: 1.3em;
     text-align: center;
     margin: auto;
+    margin-top: 400px;
     width: 80%;
     line-height: 1.48em;
-
 }
 
 .parallax-1 {
@@ -3136,6 +3149,7 @@ footer {
     line-height: 2;
     text-align: center;
     color: rgba(255, 255, 255, 0.3);
+    background-color: #282D31;
 }
 
 footer h4 {
