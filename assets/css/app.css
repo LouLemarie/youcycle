@@ -24,6 +24,7 @@ h1{
     font-family: 'Roboto', arial;
     text-align: center;
 }
+<<<<<<< HEAD
 .mycluster {
     height: 40px;
     width: 40px;
@@ -42,4 +43,6 @@ h1{
     background-color: darkgreen;
     color: #000000;
 }
+=======
+>>>>>>> eb4d5b061288ba8dc763c6b344ebc67c40249cc0
 

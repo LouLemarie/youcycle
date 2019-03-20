@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AddAdminController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+
+        <div class="form">
+
+                {{ form_start(form) }}
+                <img src="{{ asset('./../build/img/logo.png') }}" alt="Logo">
+                {{ form_row(form.email) }}
+                {{ form_row(form.name) }}
+                {{ form_row(form.firstname) }}
+                {{ form_row(form.pwd.first) }}
+                {{ form_row(form.pwd.second) }}
+
+                <button type="submit">Inscription!</button>
+                {{ form_end(form) }}
+        </div>
+</div>
+{% endblock %}

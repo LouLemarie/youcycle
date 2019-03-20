@@ -1,7 +1,7 @@
 var Encore = require('@symfony/webpack-encore');
 
 Encore
-    // directory where compiled assets will be stored
+// directory where compiled assets will be stored
     .setOutputPath('public/build/')
     // public path used by the web server to access the output path
     .setPublicPath('/build')
@@ -51,18 +51,21 @@ Encore
     //.autoProvidejQuery()
     .autoProvideVariables({
         $:'jquery',
-    jQuery:'jquery',
-    'windows.jQuery': 'jquery'})
+<<<<<<< HEAD
+        jQuery:'jquery', 'windows.jQuery': 'jquery'
+    })
+
+
+=======
+        jQuery:'jquery',
+        'windows.jQuery': 'jquery'})
+>>>>>>> 8f5e784ff16707860e4804bd79094eec39f5984c
 
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
     .copyFiles({
-        from: './assets/img',
-        to: 'img/[path][name].[ext]'
-    },{
-        from: './assets/fonts',
-        to: 'fonts/[path][name].[ext]'
+        from: './assets/images',
     })
 ;
 
