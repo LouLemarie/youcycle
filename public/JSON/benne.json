@@ -1,4 +1,5 @@
-var verre ={
+var verre =
+{
   "type": "FeatureCollection",
   "name": "mmm_pav_enterres_existants",
   "crs": {

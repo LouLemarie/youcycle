@@ -202,6 +202,7 @@
         "files": [
             "./config/packages/sonata_core.yaml"
         ]
+
     },
     "sonata-project/datagrid-bundle": {
         "version": "2.5.0"

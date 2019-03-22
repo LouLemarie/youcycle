@@ -2586,6 +2586,7 @@
             ],
             "authors": [
                 {
+
                     "name": "Sonata Community",
                     "homepage": "https://github.com/sonata-project/SonataDatagridBundle/contributors"
                 },
@@ -2637,7 +2638,22 @@
                 "doctrine/phpcr-odm": "If you use doctrine phpcr",
                 "symfony/framework-bundle": "If you want to use symfony"
             },
-            "type": "library",
+            "conflict": {
+                "simplethings/entity-audit-bundle": ">=2.0",
+                "sonata-project/block-bundle": "<3.11"
+            },
+            "provide": {
+                "sonata-project/admin-bundle-persistency-layer": "1.0.0"
+            },
+            "require-dev": {
+                "simplethings/entity-audit-bundle": "^0.9 || ^1.0",
+                "sonata-project/block-bundle": "^3.11",
+                "symfony/phpunit-bridge": "^4.2"
+            },
+            "suggest": {
+                "simplethings/entity-audit-bundle": "If you want to support for versioning of entities and their associations."
+            },
+            "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.x-dev"
@@ -2654,6 +2670,7 @@
             ],
             "authors": [
                 {
+
                     "name": "Thomas Rabaix",
                     "email": "thomas.rabaix@sonata-project.org",
                     "homepage": "http://sonata-project.org"
