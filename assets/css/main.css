@@ -28,11 +28,17 @@ body {
     font-style: normal;
     font-weight: normal;
     line-height: 1.765;
-    color: #757575;
+    color: #111111;
     margin: 0;
     padding: 0;
 }
 
+.animated.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    animation-duration: 1.25s;
+    animation-iteration-count: 5;
+}
 
 /* ------------------------------------------------------------------- 
  * ## links
@@ -1702,7 +1708,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 img.mail-icon {
     width: 70px;
     position: absolute;
-    left: -150px;
+    left: -15%;
     bottom: -310px;
     /*filter: invert(43%) sepia(38%) saturate(4737%) hue-rotate(203deg) brightness(100%) contrast(88%);*/
     filter: invert(97%) sepia(91%) saturate(63%) hue-rotate(348deg) brightness(103%) contrast(98%);
@@ -2400,6 +2406,8 @@ html.no-csstransitions .home-content__main {
 }
 
 .parallax-1 .ptext, .parallax-2 .ptext {
+    background-color: #111;
+    opacity: 0.75;
     position: relative;
     top: -70%;
     font-size: 1.3em;
@@ -2703,7 +2711,7 @@ html.no-csstransitions .home-content__main {
     top: 0;
     bottom: 0;
     right: 0;
-    background-color: #121212;
+    background-color: #282D31;
 }
 
 .contact-secondary .contact-info {
@@ -3164,7 +3172,7 @@ footer {
     line-height: 2;
     text-align: center;
     color: rgba(255, 255, 255, 0.3);
-    background-color: #282D31;
+    background-color: #111111;
 }
 
 footer h4 {
@@ -3209,10 +3217,10 @@ footer .row {
     padding: 0;
     outline: 0;
     border: none;
-    width: 85px;
-    height: 28px;
-    background: url("../images/logo-footer.png") no-repeat center;
-    background-size: 85px 28px;
+    width: 140px;
+    height: 90px;
+    background: url("../images/logo.svg") no-repeat center;
+    background-size: 150px 90px;
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
