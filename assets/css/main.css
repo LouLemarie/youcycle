@@ -1393,7 +1393,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     top: 0;
     left: -70px;
     width: 70px;
-    padding-left: 12px;
 }
 
 .header-menu-icon {
@@ -1716,7 +1715,7 @@ img.mail-icon {
 
 .home-content__buttons {
     padding-top: 6rem;
-    text-align: left;
+    text-align: center;
     margin: 0 auto;
     width: 450px;
 }
@@ -1724,7 +1723,7 @@ img.mail-icon {
 .home-content__buttons .btn {
     width: 215px;
     color: #FFFFFF;
-    margin: 1.5rem 1.5rem 0 0;
+    margin: 1.5rem 1rem 0 0;
     letter-spacing: .25rem;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -2356,6 +2355,13 @@ html.no-csstransitions .home-content__main {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+/*.parallax-1 p {*/
+    /*background-color: black;*/
+/*}*/
+
+/*#features-recycling{*/
+    /*opacity: 0.33!important;*/
+/*}*/
 
 .ptitle {
     top: 40%;
@@ -2418,18 +2424,28 @@ html.no-csstransitions .home-content__main {
     width: 80%;
     line-height: 1.48em;
 }
+.koko{
+    background-color: rgba(0, 0, 0, 0.59) !important;
+}
 
 .parallax-1 {
     background-image: url("../images/sake-bottles.jpg");
     display: block;
     color: #FDFBF9;
+
 }
 
 .parallax-2 {
     background-image: url("../images/camion-benne.jpg");
     display: block;
     color: #FDFBF9;
+
 }
+
+/*.bibibi{*/
+    /*background-color: rgba(0, 0, 0, 0.59) !important;*/
+
+/*}*/
 
 
 

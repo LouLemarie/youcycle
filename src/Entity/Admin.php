@@ -3,11 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AdminRepository")
  */
-class Admin
+class Admin implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -37,9 +38,9 @@ class Admin
     private $pwd;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="json")
      */
-    private $role;
+    private $role = [];
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\City", cascade={"persist", "remove"})
@@ -87,26 +88,42 @@ class Admin
         return $this;
     }
 
-    public function getPwd(): ?string
+    /**
+     * @return mixed
+     */
+    public function getPwd()
     {
         return $this->pwd;
     }
 
-    public function setPwd(string $pwd): self
+    /**
+     * @param mixed $pwd
+     */
+    public function setPwd($pwd): void
+    {
+        $this->pwd = $pwd;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->pwd;
+    }
+
+    public function setPassword(string $pwd): self
     {
         $this->pwd = $pwd;
 
         return $this;
     }
 
-    public function getRole(): ?int
+    public function getRoles(): ?array
     {
-        return $this->role;
+        return $this->role = array();
     }
 
-    public function setRole(int $role): self
+    public function setRoles(array $role): self
     {
-        $this->role = $role;
+        $this->role[0] = $role;
 
         return $this;
     }
@@ -116,10 +133,27 @@ class Admin
         return $this->city;
     }
 
+//    //Fonction UserInterface
+
     public function setCity(?City $city): self
     {
         $this->city = $city;
 
         return $this;
     }
+
+    public function getSalt()
+    {
+        return null;
+    }
+    public function eraseCredentials()
+    {
+        return null;
+    }
+
+    public function getUsername()
+    {
+        $this->getEmail();
+    }
+
 }

@@ -3,13 +3,29 @@
 {% block title %}Connexion Admin!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    {% if error %}
+        <div class="alert alert-danger">
+            {#{{ dump(error) }}#}
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+    {% endif %}
 
-<div class="example-wrapper">
-    <h1>Bienvenue sur la {{ controller_name }}! ✅</h1>
+        <div class="example-wrapper">
+            <div class="form">
+                <form class="login-form" method="post">
+                    <img src="{{ asset('./../build/img/logo.png') }}" alt="Logo">
+                    <h3>Connexion</h3>
+                    <label for="inputEmail" class="sr-only">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
 
-</div>
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+                    <button type="submit">login</button>
+                    <p class="message"> Pas encore inscrit? <a href="{{ path('add_register') }}"> Créer un compte </a></p>
+                </form>
+            </div>
+        </div>
 {% endblock %}
