@@ -34,7 +34,7 @@ class Bin
     private $volume;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\city", inversedBy="bin")
+     * @ORM\ManyToOne(targetEntity="App\Entity\City", inversedBy="bin")
      * @ORM\JoinColumn(nullable=false)
      */
     private $city;

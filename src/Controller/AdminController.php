@@ -26,15 +26,15 @@ class AdminController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/admin/dashboard", name="admindashboard")
-     */
-    public function adminDashboardRoute()
-    {
-        return $this->render('admindashboard.html.twig', [
-            'controller_name' => 'Dashboard Admin',
-        ]);
-    }
+//    /**
+//     * @Route("/admin/dashboard", name="admindashboard")
+//     */
+//    public function adminDashboardRoute()
+//    {
+//        return $this->render('admindashboard.html.twig', [
+//            'controller_name' => 'Dashboard Admin',
+//        ]);
+//    }
 
     /**
      * @Route("/logout", name="security_logout")
