@@ -1717,7 +1717,7 @@ img.mail-icon {
     padding-top: 6rem;
     text-align: center;
     margin: 0 auto;
-    width: 450px;
+    width: 100%;
 }
 
 .home-content__buttons .btn {
