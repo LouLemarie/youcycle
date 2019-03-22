@@ -28,11 +28,17 @@ body {
     font-style: normal;
     font-weight: normal;
     line-height: 1.765;
-    color: #757575;
+    color: #111111;
     margin: 0;
     padding: 0;
 }
 
+.animated.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    animation-duration: 1.25s;
+    animation-iteration-count: 5;
+}
 
 /* ------------------------------------------------------------------- 
  * ## links
@@ -817,9 +823,14 @@ input[type="button"].btn--primary:focus {
 }
 
 .btn--stroke, button.btn--stroke {
-    background: transparent !important;
-    border: 0.2rem solid #008B35;
-    color: #008B35;
+    background: transparent;
+    border: 0.3rem solid #FDFBF9;
+    color: #FDFBF9;
+}
+
+.btn--stroke--submit {
+    background: #F5B92A !important;
+    border: 0.2rem solid #F5B92A;
 }
 
 .btn--stroke:hover, button.btn--stroke:hover {
@@ -1363,7 +1374,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .header-menu-toggle.opaque {
-    background-color: #249988;
+    background-color: #008B35;
 }
 
 .header-menu-toggle.opaque .header-menu-text {
@@ -1693,6 +1704,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     transition: transform 0.2s 0.2s, opacity 0.1s 0.3s, -webkit-transform 0.2s 0.2s;
 }
 
+img.mail-icon {
+    width: 70px;
+    position: absolute;
+    left: -15%;
+    bottom: -310px;
+    /*filter: invert(43%) sepia(38%) saturate(4737%) hue-rotate(203deg) brightness(100%) contrast(88%);*/
+    filter: invert(97%) sepia(91%) saturate(63%) hue-rotate(348deg) brightness(103%) contrast(98%);
+}
+
 .home-content__buttons {
     padding-top: 6rem;
     text-align: center;
@@ -1702,7 +1722,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .home-content__buttons .btn {
     width: 215px;
-    border-color: #FFFFFF;
     color: #FFFFFF;
     margin: 1.5rem 1rem 0 0;
     letter-spacing: .25rem;
@@ -2346,7 +2365,7 @@ html.no-csstransitions .home-content__main {
 
 .ptitle {
     top: 40%;
-    width: 30%;
+    width: 450px;
     color: #282D31;
     background-color: #F5B92A;
     text-align: center;
@@ -2356,7 +2375,7 @@ html.no-csstransitions .home-content__main {
 .parallax-1_ptitle-1 {
     margin-top: 0px;
     float: right;
-    height: 400px;
+    height: 350px;
     position: absolute;
     top: 0;
     right: 0;
@@ -2366,7 +2385,7 @@ html.no-csstransitions .home-content__main {
 .parallax-2_ptitle-2 {
     margin-top: 0px;
     float: left;
-    height: 400px;
+    height: 350px;
     position: absolute;
     top: 0;
     left: 0;
@@ -2381,15 +2400,29 @@ html.no-csstransitions .home-content__main {
     clear: right;
 }
 
-.parallax-1 p, .parallax-2 p {
-    position: absolute;
-    top: 35%;
+.parallax-1 .pquote, .parallax-2 .pquote {
+    position: relative;
+    top: -100%;
+    font-size: 0.75em;
+    text-align: center;
+    margin: auto;
+    margin-top: 400px;
+    width: 80%;
+    line-height: 1.48em;
+}
+
+.parallax-1 .ptext, .parallax-2 .ptext {
+    background-color: #111;
+    opacity: 0.75;
+    position: relative;
+    top: -70%;
     font-size: 1.3em;
     text-align: center;
     margin: auto;
+    margin-top: 400px;
+    margin-bottom: 125px;
     width: 80%;
     line-height: 1.48em;
-
 }
 .koko{
     background-color: rgba(0, 0, 0, 0.59) !important;
@@ -2397,14 +2430,14 @@ html.no-csstransitions .home-content__main {
 
 .parallax-1 {
     background-image: url("../images/sake-bottles.jpg");
-    min-height: 150vh;
+    display: block;
     color: #FDFBF9;
 
 }
 
 .parallax-2 {
     background-image: url("../images/camion-benne.jpg");
-    min-height: 150vh;
+    display: block;
     color: #FDFBF9;
 
 }
@@ -2469,7 +2502,10 @@ html.no-csstransitions .home-content__main {
 
 @media only screen and (max-width: 600px) {
     .s-services {
-        padding-top: 12rem;
+        /*padding-top: 12rem;*/
+    }
+    .parallax-1 p, .parallax-2 p {
+        width: 100%;
     }
     .services-list .service-item:nth-child(n) {
         padding-right: 10px;
@@ -2691,7 +2727,7 @@ html.no-csstransitions .home-content__main {
     top: 0;
     bottom: 0;
     right: 0;
-    background-color: #121212;
+    background-color: #282D31;
 }
 
 .contact-secondary .contact-info {
@@ -3152,6 +3188,7 @@ footer {
     line-height: 2;
     text-align: center;
     color: rgba(255, 255, 255, 0.3);
+    background-color: #111111;
 }
 
 footer h4 {
@@ -3196,10 +3233,10 @@ footer .row {
     padding: 0;
     outline: 0;
     border: none;
-    width: 85px;
-    height: 28px;
-    background: url("../images/logo-footer.png") no-repeat center;
-    background-size: 85px 28px;
+    width: 140px;
+    height: 90px;
+    background: url("../images/logo.svg") no-repeat center;
+    background-size: 150px 90px;
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
