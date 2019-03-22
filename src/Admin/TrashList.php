@@ -12,8 +12,9 @@
      protected function configureListFields(ListMapper $listMapper)
      {
          $listMapper
-             ->add('title')
-             ->add('draft')
+             ->add('Serial_nb')
+             ->add('Localisation')
+             ->add('volume')
 
          ;
      }
