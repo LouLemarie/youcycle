@@ -7,7 +7,6 @@
         "ext-iconv": "*",
         "sensio/framework-extra-bundle": "^5.1",
         "sonata-project/admin-bundle": "^3.47",
-        "sonata-project/doctrine-orm-admin-bundle": "^3.8",
         "swiftmailer/swiftmailer": "^6.0",
         "symfony/asset": "4.2.*",
         "symfony/console": "4.2.*",

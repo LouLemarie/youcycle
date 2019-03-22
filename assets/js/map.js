@@ -9,7 +9,6 @@ window.onload = function () {
         accessToken: 'pk.eyJ1IjoiemFua2siLCJhIjoiY2p0Zm1sN2JoMGMxMzQ1bGh2eHdocWZkciJ9.RpxtpjYNa4wrJFMsxsvYhQ'
     }).addTo(map);
 
-    L.control.layers(map, null, {position: 'topright'}).addTo(map);
 
     geojson = L.geoJson(verre, {
         style: function (feature) {
@@ -33,7 +32,7 @@ window.onload = function () {
     {
 
         var  myIcon = L.icon({
-            iconUrl: "build/img/glassLogo.png",
+            iconUrl: "build/glassLogo.png",
             iconSize: [30, 35]
         });
 
