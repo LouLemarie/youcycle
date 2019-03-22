@@ -10,7 +10,7 @@
 
         <div class="header-logo">
             <a class="site-logo" href="#">
-                <img src="{{ asset('build/logo.png') }}" alt="Homepage">
+                <img src="{{ asset('build/logo.svg') }}" alt="Homepage">
             </a>
         </div>
 
@@ -23,7 +23,7 @@
 
                 {# Smooth scrolling #}
                 <ul class="header-nav__list">
-                    <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                    <li class="current"><a class="smoothscroll"  href="#map" title="map">Carte Intéractive</a></li>
                     <li><a class="smoothscroll"  href="#features" title="features">Features</a></li>
                     <li><a class="smoothscroll"  href="#services" title="services">Services</a></li>
                     <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
@@ -86,11 +86,9 @@
                     </a>
                 </div>
 
-                <a href="#contact">
-                    <img class="mail-icon animated shake" src="{{ asset('build/icons/envelope.svg') }}" alt="contact-us">
+                <a href="#mc-form">
+                    <img class="mail-icon animated infinite bounce" src="{{ asset('build/icons/envelope.svg') }}" alt="contact-us">
                 </a>
-
-
 
             </div>
 
@@ -334,9 +332,9 @@
             <div class="col-six tab-full left footer-desc">
 
                 <div class="footer-logo"></div>
-                Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Quaerat voluptas autem necessitatibus vitae aut.
+                Notre projet est un projet de recensement des bennes à verre. L’ objectif est de proposer aux utilisateurs
+                un site listant les bennes à verre de sa ville en lui proposant la plus proche et en lui fournissant
+                des informations relatives à la benne tel que son volume par exemple .
 
             </div>
 
@@ -344,8 +342,7 @@
 
                 <h4>Abonnez vous à notre newsletter.</h4>
                 <p>
-                    Quia quo qui sed odit. Quaerat voluptas autem necessitatibus vitae aut non alias sed quia.
-                    Ut itaque enim optio ut excepturi deserunt iusto porro.
+                    Pour vous tenir au courant des avancées et mises à jour de la platforme.
                 </p>
 
                 <div class="subscribe-form">
