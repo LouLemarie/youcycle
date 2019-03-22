@@ -5,9 +5,36 @@
 
 {% block body %}
     {#{% block navbar %}{% endblock %}#}
-    <div class="example-wrapper">
-        <div id="map">
-            <!-- Ici s'affichera la carte -->
+    <<div class="col-two">
+    <nav class="header-nav">
+
+        <div class="header-nav__close" title="close"><span>Close</span></div>
+
+        <div class="header-nav__content">
+            <h3>Navigation</h3>
+
+
+            <ul class="header-nav__list">
+                <li class="current"><a href="/" title="home">Accueil</a></li>
+                <li><a href="#" class="disabled" title="newsletter">Dernières actualitées</a></li>
+            </ul>
+
+
+        </div> <!-- end header-nav__content -->
+
+    </nav>  <!-- end header-nav -->
+
+    <a class="header-menu-toggle" href="#">
+        <span class="header-menu-text"></span>
+        <span class="header-menu-icon"></span>
+    </a>
+
+</div><!-- end s-header -->
+    <div class="col-twelve">
+        <div class="example-wrapper">
+            <div id="map">
+                <!-- Ici s'affichera la carte -->
+            </div>
         </div>
     </div>
     {#{% block footer %}{% endblock %}#}
